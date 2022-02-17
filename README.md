@@ -16,7 +16,7 @@ Javascript (node + puppeteer)
 
 ## To-do
 
-- [x] [Carregar URL sem estar logado](#carregar-url-sem-estar-logado)
+- [x] [Acessar linkedin](#acessar-linkedin)
 - [x] [Definir quais dados capturar](#definir-quais-dados-serão-capturados)
 - [x] [Criar script para capturar os dados pelo DOM](#criar-script-para-capturar-os-dados-pelo-dom)
 - [ ] [Sanitizar dados](#)
@@ -26,19 +26,9 @@ Javascript (node + puppeteer)
 
 ---
 
-### Carregar URL sem estar logado
+### Acessar LinkedIn
 
-Atualmente identifiquei que a estrutura da url pública (sem login) funciona da seguinte forma:
-
-- `https://br.linkedin.com/in/@dapessoa`
-
-```javascript
-"br."; // subdominio identificando país
-"linkedin.com/in/"; // url padrão
-"@pessoal"; // Seu perfil do linkedin
-```
-
-> Pessoas influencers conseguem ter o perfil www público
+> https://www.linkedin.com/login/pt?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin
 
 ---
 
