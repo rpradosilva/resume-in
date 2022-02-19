@@ -6,15 +6,15 @@ async function robot() {
   const page = await browser.newPage();
   let shortcut, email, pass;
 
-  shortcut = readlineSync.question("@linkedin: ");
+  shortcut = readlineSync.question("https://www.linkedin.com/in/: ");
   email = readlineSync.question("E-mail: ");
   pass = readlineSync.question("Password: ");
 
   await page.goto("https://www.linkedin.com/");
   await page.click(".nav__button-secondary");
   console.warn("Logging...");
-  await page.type("[id='username']", email, { delay: 500 });
-  await page.type("[id='password']", pass, { delay: 500 });
+  await page.type("[id='username']", email, { delay: 200 });
+  await page.type("[id='password']", pass, { delay: 200 });
   await page.click("[type='submit']");
   await page.waitForNavigation();
   console.warn("Login sucessfull!");

@@ -18,9 +18,9 @@ Javascript (node + puppeteer)
 
 - [x] [Acessar linkedin](#acessar-linkedin)
 - [x] [Definir quais dados capturar](#definir-quais-dados-serão-capturados)
-- [x] [Criar script para capturar os dados pelo DOM](#criar-script-para-capturar-os-dados-pelo-dom)
+- [ ] [Criar script para capturar os dados pelo DOM](#criar-script-para-capturar-os-dados-pelo-dom)
 - [ ] [Sanitizar dados](#)
-- [ ] [Criar robô com puppeteer](#)
+- [x] [Criar robô com puppeteer](#)
 - [ ] [Salvar dados em JSON](#)
 - [ ] [Salvar JSON na máquina/servidor](#)
 
