@@ -3,7 +3,8 @@ const readlineSync = require("readline-sync");
 
 async function robot() {
   const browser = await puppeteer.launch();
-  const page = await browser.newPage();
+  const context = await browser.createIncognitoBrowserContext();
+  const page = await context.newPage();
   let shortcut, email, pass;
 
   shortcut = readlineSync.question("https://www.linkedin.com/in/: ");
@@ -13,8 +14,8 @@ async function robot() {
   await page.goto("https://www.linkedin.com/");
   await page.click(".nav__button-secondary");
   console.warn("Logging...");
-  await page.type("[id='username']", email, { delay: 200 });
-  await page.type("[id='password']", pass, { delay: 200 });
+  await page.type("[id='username']", email, { delay: 300 });
+  await page.type("[id='password']", pass, { delay: 300 });
   await page.click("[type='submit']");
   await page.waitForNavigation();
   console.warn("Login sucessfull!");
