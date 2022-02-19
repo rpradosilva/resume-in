@@ -1,0 +1,28 @@
+{
+  "name": "resume-in",
+  "version": "1.0.0",
+  "description": "A LinkedIn web scraping to custom resume",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rpradosilva/resume-in.git"
+  },
+  "keywords": [
+    "linkedin",
+    "resume"
+  ],
+  "author": "Rafael Prado",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rpradosilva/resume-in/issues"
+  },
+  "homepage": "https://github.com/rpradosilva/resume-in#readme",
+  "dependencies": {
+    "puppeteer": "^13.3.2",
+    "readline-sync": "^1.4.10"
+  }
+}
