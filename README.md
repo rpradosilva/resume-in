@@ -24,17 +24,10 @@ It is a web application that scrapes your linkedin data to create a local databa
 
 ![nodeJS](https://img.shields.io/badge/-v16.14.0-ffffff?style=social&label=nodeJS)</br>![puppeteer](https://img.shields.io/github/package-json/dependency-version/rpradosilva/resume-in/puppeteer?style=social)</br>![readline-sync](https://img.shields.io/github/package-json/dependency-version/rpradosilva/resume-in/readline-sync?style=social)
 
-## Tasks
+### Other informations
 
-- [x] Create robot
-  - [x] Login LinkedIn
-  - [x] Access profile
-  - [x] View all information
-  - [ ] Ask information login
-  - [ ] Create credentials into file
-- [x] [Define data structure](/.github/data-structure.md)
-- [ ] Identify how to capture the data (DOM)
-- [ ] Save info into JSON file
+- Project under construction, view the working [here](https://github.com/rpradosilva/resume-in/projects/1).
+- [View data structure](/.github/data-structure.md)
 
 ## Authors
 
