@@ -1,130 +1,51 @@
-# resume-in
+<br>
+<div align="center">
+    <img src=".github/resume-in-white.png" alt="Logo Repo" width="150">
+    <h2>
+        ResumeIn
+    </h2>
+    A LinkedIn web scraping to custom resume
+</div>
+<br>
+<div align="center">
 
-A LinkedIn web scraping to custom resume
+[![About](https://img.shields.io/badge/-About-212121)](#about)
+[![License](https://img.shields.io/badge/-License-212121)](/LICENSE)
+[![Authors](https://img.shields.io/badge/-Author-212121)](#authors)
+[![Install](https://img.shields.io/badge/-Install-006699)](#)
 
-## Objetivo
+</div>
 
-Importar Informações do linkedin para construir portifolio dinâmico e deixá-lo atualizado.
+## About
 
-## Riscos
+It is a web application that scrapes your linkedin data to create a local database of your information to keep your portfolio up to date.
 
-É um Web Scraping, se mudar alguma estrutura de exibição, a aplicação quebra.
+### Technologies
 
-## Tecnologia
+![nodeJS](https://img.shields.io/badge/-v16.14.0-ffffff?style=social&label=nodeJS)
 
-Javascript (node + puppeteer)
+![puppeteer](https://img.shields.io/github/package-json/dependency-version/rpradosilva/resume-in/puppeteer?style=social)
 
-## To-do
+![readline-sync](https://img.shields.io/github/package-json/dependency-version/rpradosilva/resume-in/readline-sync?style=social)
 
-- [x] [Acessar linkedin](#acessar-linkedin)
-- [x] [Definir quais dados capturar](#definir-quais-dados-serão-capturados)
-- [ ] [Criar script para capturar os dados pelo DOM](#criar-script-para-capturar-os-dados-pelo-dom)
-- [ ] [Sanitizar dados](#)
-- [x] [Criar robô com puppeteer](#)
-- [ ] [Salvar dados em JSON](#)
-- [ ] [Salvar JSON na máquina/servidor](#)
+## Tasks
+
+- [x] Create robot
+  - [x] Login LinkedIn
+  - [x] Access profile
+  - [x] View all information
+  - [ ] Ask information login
+  - [ ] Create credentials into file
+- [x] [Define data structure](/.github/data-structure.md)
+- [ ] Identify how to capture the data (DOM)
+- [ ] Save info into JSON file
+
+## Authors
+
+|      [Rafael Prado](http://www.github.com/rpradosilva)      |
+| :---------------------------------------------------------: |
+| ![](https://avatars2.githubusercontent.com/u/22681977?s=80) |
 
 ---
 
-### Acessar LinkedIn
-
-> https://www.linkedin.com/login/pt?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin
-
----
-
-### Definir quais dados serão capturados
-
-Abaixo seria a separacao dos dados e o que conseguimos capturar
-
-- Nome
-- Descricao
-- Empresa atual = ultima exp profissional
-- Cargo atual
-  - ultima exp profissional
-  - default = remoto
-- Tempo de trabalho total = soma do tempo das exp
-- Experiencias profissionais
-  - Logo
-  - Nome da empresa
-  - Cargo
-  - Localizacao
-
-```javascript
-const resume = {
-  myname: "", // sanitizar
-  bio: "",
-  experience: [
-    {
-      jobLogo: "",
-      jobName: "", // sanitizar
-      position: "", // sanitizar
-      jobDuration: "",
-      location: "", // sanitizar
-    },
-  ],
-  lastJob: "",
-  lastPosition: "", // default: Remoto
-  totalTimeJob: "",
-};
-```
-
-### Criar script para capturar os dados pelo DOM
-
-Arquivo aqui: [Link](/scriptDOM.js)
-
-```javascript
-// Nome do perfil (sanitizar nome)
-document.querySelector(".top-card-layout__title").textContent;
-
-// Bio
-document.querySelector(".core-section-container__content p").textContent;
-```
-
-```javascript
-// Experiencias profissionais (agrupamento de infos sobre cada experiencia)
-var exp = document.querySelectorAll(".experience-item");
-```
-
-```javascript
-// funciona para todos
-
-// Logo da empresa individual
-exp[0].querySelector(".profile-section-card__image-link img").src;
-
-// Cargo na empresa individual (sanitizar)
-exp[0].querySelector(".profile-section-card__title").textContent;
-
-// Nome da empresa individual (sanitizar)
-exp[0].querySelector(".profile-section-card__subtitle a").textContent;
-```
-
-```javascript
-// Validacao das experiencias profissionais
-exp[0].classList == "experience-group experience-item";
-
-return true; // possui mais de 1 posicao dentro da empresa
-return false; // não possui mais de uma posicao
-```
-
-```javascript
-// Apenas para empresas que não possui mais de uma posicao
-
-// Tempo na empresa individual
-exp[0].querySelector(".date-range__duration").textContent;
-
-// Local da empresa individual (sanitizar)
-exp[0].querySelector(".experience-item__location.experience-item__meta-item")
-  .textContent;
-```
-
-```javascript
-// possuem mais de uma posicao
-
-// Tempo na empresa individual (sanitizar
-exp[0].querySelector(".experience-group-header__duration").textContent;
-
-// Local da empresa individual (sanitizar)
-exp[0].querySelector(
-  ".experience-group-position__location.experience-group-position__meta-item"
-).textContent;
-```
+### [<img alt="Logo RPrado" src="https://raw.githubusercontent.com/rpradosilva/rpradosilva/master/.github/logo-rprado.png" width="91px" />](http://rprado.design)
