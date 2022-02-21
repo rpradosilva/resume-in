@@ -1,6 +1,6 @@
 <br>
 <div align="center">
-    <img src=".github/resume-in-white.png" alt="Logo Repo" width="150">
+    <img src=".github/logo.png" alt="Logo Repo" width="150">
     <h2>
         ResumeIn
     </h2>
