@@ -6,9 +6,8 @@ async function scrapingRobot() {
   const browser = await puppeteer.launch();
   const context = await browser.createIncognitoBrowserContext();
   const page = await context.newPage();
-  const credentialsPath = "./credentials.json";
 
-  let credentials = await config(credentialsPath);
+  let credentials = await config();
   await login(page, credentials);
   await page.click(".feed-identity-module__actor-meta.break-words a");
   await page.waitForNavigation();
@@ -20,23 +19,12 @@ async function scrapingRobot() {
   console.log("Finished! ✔");
 }
 
-async function config(credentialsPath) {
+async function config() {
+  console.warn("### Login LinkedIn: ###");
   let email, pass;
 
-  if (fs.existsSync(credentialsPath)) {
-    let credentials = JSON.parse(fs.readFileSync(credentialsPath));
-
-    email = credentials.email;
-    pass = credentials.pass;
-  } else {
-    console.warn("### Login LinkedIn: ###");
-
-    email = readlineSync.questionEMail("E-mail: ");
-    pass = readlineSync.question("Password: ", { hideEchoBack: true });
-
-    let data = JSON.stringify({ email, pass });
-    fs.writeFileSync(credentialsPath, data, "utf-8");
-  }
+  email = readlineSync.questionEMail("E-mail: ");
+  pass = readlineSync.question("Password: ", { hideEchoBack: true });
 
   return { email, pass };
 }
