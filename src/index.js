@@ -10,7 +10,9 @@ async function scrapingRobot() {
 
   let credentials = await config(credentialsPath);
   await login(page, credentials);
-  await getPersonalData(page, credentials.shortcut);
+
+  let permalink = `https://www.linkedin.com/in/${credentials.shortcut}/`;
+  await getPersonalData(page, permalink);
 
   await browser.close();
   console.log("Finished! ✔");
@@ -51,10 +53,10 @@ async function login(page, credentials) {
   console.log("...");
 }
 
-async function getPersonalData(page, shortcut) {
+async function getPersonalData(page, permalink) {
   console.warn("Scraping personal data...");
 
-  await page.goto(`https://www.linkedin.com/in/${shortcut}/`);
+  await page.goto(permalink);
   await page.waitForSelector(".pv-text-details__left-panel h1");
 
   let myName = await page.evaluate(() => {
