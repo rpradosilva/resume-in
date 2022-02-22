@@ -10,8 +10,10 @@ async function scrapingRobot() {
 
   let credentials = await config(credentialsPath);
   await login(page, credentials);
+  await page.click(".feed-identity-module__actor-meta.break-words a");
+  await page.waitForNavigation();
 
-  let permalink = `https://www.linkedin.com/in/${credentials.shortcut}/`;
+  let permalink = await page.url();
   await getPersonalData(page, permalink);
 
   await browser.close();
@@ -19,28 +21,28 @@ async function scrapingRobot() {
 }
 
 async function config(credentialsPath) {
-  let shortcut, email, pass;
+  let email, pass;
 
   if (fs.existsSync(credentialsPath)) {
     let credentials = JSON.parse(fs.readFileSync(credentialsPath));
 
-    shortcut = credentials.shortcut;
     email = credentials.email;
     pass = credentials.pass;
   } else {
-    shortcut = readlineSync.question("https://www.linkedin.com/in/: ");
-    email = readlineSync.question("E-mail: ");
-    pass = readlineSync.question("Password: ");
+    console.warn("### Login LinkedIn: ###");
 
-    let data = JSON.stringify({ shortcut, email, pass });
+    email = readlineSync.questionEMail("E-mail: ");
+    pass = readlineSync.question("Password: ", { hideEchoBack: true });
+
+    let data = JSON.stringify({ email, pass });
     fs.writeFileSync(credentialsPath, data, "utf-8");
   }
 
-  return { shortcut, email, pass };
+  return { email, pass };
 }
 
 async function login(page, credentials) {
-  console.warn("Logging...");
+  console.warn("Logging into LinkedIn...");
 
   await page.goto("https://www.linkedin.com/");
   await page.click(".nav__button-secondary");
