@@ -1,52 +1,68 @@
 const puppeteer = require("puppeteer");
 const readlineSync = require("readline-sync");
+const fs = require("fs");
 
-async function robot() {
+async function scrapingRobot() {
   const browser = await puppeteer.launch();
   const context = await browser.createIncognitoBrowserContext();
   const page = await context.newPage();
-  let shortcut, email, pass;
+  const credentialsPath = "./credentials.json";
 
-  shortcut = readlineSync.question("https://www.linkedin.com/in/: ");
-  email = readlineSync.question("E-mail: ");
-  pass = readlineSync.question("Password: ");
-
-  await page.goto("https://www.linkedin.com/");
-  await page.click(".nav__button-secondary");
-  console.warn("Logging...");
-  await page.type("[id='username']", email, { delay: 300 });
-  await page.type("[id='password']", pass, { delay: 300 });
-  await page.click("[type='submit']");
-  await page.waitForNavigation();
-  console.warn("Login sucessfull!");
-  console.log("...");
-
-  console.warn("Scraping personal data...");
-  await page.goto(`https://www.linkedin.com/in/${shortcut}/`);
-  await page.waitForSelector(".pv-text-details__left-panel h1");
-  let myName = await page.evaluate(() => {
-    return document.querySelector(".pv-text-details__left-panel h1")
-      .textContent;
-  });
-  console.log(`Meu nome é ${myName}`);
-
-  // capture experience data
-  console.warn("Scraping experiencies...");
-  await page.goto(
-    `https://www.linkedin.com/in/${shortcut}/details/experience/`
-  );
-  await page.waitForSelector(
-    ".pvs-entity.pvs-entity--padded.pvs-list__item--no-padding-when-nested"
-  );
-  let experienceItems = await page.evaluate(() => {
-    return document.querySelectorAll(
-      ".pvs-entity.pvs-entity--padded.pvs-list__item--no-padding-when-nested"
-    ).length;
-  });
-  console.log(`Já tive ${experienceItems} empregos`);
+  let credentials = await config(credentialsPath);
+  await login(page, credentials);
+  await getPersonalData(page, credentials.shortcut);
 
   await browser.close();
   console.log("Finished! ✔");
 }
 
-robot();
+async function config(credentialsPath) {
+  let shortcut, email, pass;
+
+  if (fs.existsSync(credentialsPath)) {
+    let credentials = JSON.parse(fs.readFileSync(credentialsPath));
+
+    shortcut = credentials.shortcut;
+    email = credentials.email;
+    pass = credentials.pass;
+  } else {
+    shortcut = readlineSync.question("https://www.linkedin.com/in/: ");
+    email = readlineSync.question("E-mail: ");
+    pass = readlineSync.question("Password: ");
+
+    let data = JSON.stringify({ shortcut, email, pass });
+    fs.writeFileSync(credentialsPath, data, "utf-8");
+  }
+
+  return { shortcut, email, pass };
+}
+
+async function login(page, credentials) {
+  console.warn("Logging...");
+
+  await page.goto("https://www.linkedin.com/");
+  await page.click(".nav__button-secondary");
+  await page.type("[id='username']", credentials.email, { delay: 300 });
+  await page.type("[id='password']", credentials.pass, { delay: 300 });
+  await page.click("[type='submit']");
+  await page.waitForNavigation();
+
+  console.warn("Login sucessfull!");
+  console.log("...");
+}
+
+async function getPersonalData(page, shortcut) {
+  console.warn("Scraping personal data...");
+
+  await page.goto(`https://www.linkedin.com/in/${shortcut}/`);
+  await page.waitForSelector(".pv-text-details__left-panel h1");
+
+  let myName = await page.evaluate(() => {
+    return document.querySelector(".pv-text-details__left-panel h1")
+      .textContent;
+  });
+
+  return console.log(`Meu nome é ${myName}`);
+}
+
+scrapingRobot();
