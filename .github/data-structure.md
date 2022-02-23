@@ -6,7 +6,7 @@ All data related to the personal profile:
 
 | Category | Parameter    | Type     | Notes                                                         |
 | :------- | :----------- | :------- | :------------------------------------------------------------ |
-| Personal | `name`       | _string_ |                                                               |
+| Personal | `name`       | _string_ | https://www.linkedin.com/in/rpradosilva/overlay/contact-info/ |
 | Personal | `photo`      | _string_ |                                                               |
 | Personal | `email`      | _string_ | https://www.linkedin.com/in/rpradosilva/overlay/contact-info/ |
 | Personal | `tel`        | _string_ | https://www.linkedin.com/in/rpradosilva/overlay/contact-info/ |
