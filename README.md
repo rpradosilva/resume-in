@@ -11,8 +11,7 @@
 
 [![About](https://img.shields.io/badge/-About-212121)](#about)
 [![License](https://img.shields.io/badge/-License-212121)](/LICENSE)
-[![Authors](https://img.shields.io/badge/-Author-212121)](#authors)
-[![Install](https://img.shields.io/badge/-Install-006699)](#)
+[![Install](https://img.shields.io/badge/-Getting%20Started-006699)](#getting-started)
 
 </div>
 
@@ -29,12 +28,28 @@ It is a web application that scrapes your linkedin data to create a local databa
 - Project under construction, view the working [here](https://github.com/rpradosilva/resume-in/projects/1).
 - [View data structure](/.github/data-structure.md)
 
-## Authors
+## Getting Started
 
-|      [Rafael Prado](http://www.github.com/rpradosilva)      |
-| :---------------------------------------------------------: |
-| ![](https://avatars2.githubusercontent.com/u/22681977?s=80) |
+### Prerequisites
+
+The [NodeJS](https://nodejs.org/) is **required** to be able to run this project. Install in your machine and go to the next steps.
+
+### Installation
+
+1. Clone repository
+
+2. Install NPM Packages `npm i`
+
+3. Run project `npm start`
+
+### Usage
+
+- Insert your **LinkedIn** credencials
+
+## License
+
+This project is protected by the MIT license. See the file [LICENSE](/LICENSE) for more details.
 
 ---
 
-### [<img alt="Logo RPrado" src="https://raw.githubusercontent.com/rpradosilva/rpradosilva/master/.github/logo-rprado.png" width="91px" />](http://rprado.design)
+### **Developed by** [<img alt="Logo RPrado" src="https://raw.githubusercontent.com/rpradosilva/rpradosilva/master/.github/logo-rprado.png" width="91px" />](http://rprado.design)
