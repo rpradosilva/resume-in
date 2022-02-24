@@ -65,7 +65,7 @@ async function getData(page) {
   await page.click(
     ".pv-top-card-v2-ctas.pt2.display-flex .pvs-profile-actions .artdeco-dropdown.artdeco-dropdown--placement-bottom.artdeco-dropdown--justification-right.ember-view button"
   );
-  await page.waitForTimeout(5000);
+  await page.waitForTimeout(8000);
   await page.click("[aria-hidden='false'] [data-control-name='save_to_pdf']");
 
   await page._client.send("Page.setDownloadBehavior", {
@@ -73,7 +73,7 @@ async function getData(page) {
     downloadPath: saveFile,
   });
 
-  await page.waitForTimeout(6000);
+  await page.waitForTimeout(10000);
   console.log("Downloaded!");
 }
 
