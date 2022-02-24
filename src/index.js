@@ -1,23 +1,21 @@
 const puppeteer = require("puppeteer");
 const readlineSync = require("readline-sync");
 const fs = require("fs");
+const path = require("path");
 
 async function scrapingRobot() {
-  const browser = await puppeteer.launch({ headless: false });
-  const context = await browser.createIncognitoBrowserContext();
-  const page = await context.newPage();
-
-  // set window size
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
 
   let credentials = await config();
   await login(page, credentials);
 
-  let permalink = await profile(page);
-  await getPDF(page);
+  await profile(page);
+  await getData(page);
 
   await browser.close();
   console.log(" ");
-  console.log("✔ Finished!");
+  console.log("Finished!");
 }
 
 async function config() {
@@ -31,9 +29,9 @@ async function config() {
 }
 
 async function login(page, credentials) {
-  console.log(" ");
   console.log("----------------------------------------");
-  console.warn("Logging into LinkedIn...");
+  console.log(" ");
+  console.warn("Logging...");
 
   await page.goto("https://www.linkedin.com/");
   await page.click(".nav__button-secondary");
@@ -42,39 +40,41 @@ async function login(page, credentials) {
   await page.click("[type='submit']");
   await page.waitForNavigation();
 
-  console.log("✔ Login sucessfull!");
+  console.log("Login sucessfull!");
 }
 
 async function profile(page) {
   console.log(" ");
-  console.warn("Access profile...");
+  console.warn(">> Access profile...");
 
   await page.click(".feed-identity-module__actor-meta.break-words a");
   await page.waitForNavigation();
-
-  return await page.url();
 }
 
-async function getPDF(page) {
-  console.warn("Download data...");
+async function getData(page) {
+  console.warn(">> Download data...");
 
-  let downloadPath = "./pdf";
+  const downloadPath = "./data";
+  const saveFile = path.resolve(downloadPath);
 
   if (!fs.existsSync(downloadPath)) {
     fs.mkdirSync(downloadPath);
   }
 
-  await page.waitForNavigation();
+  await page.waitForTimeout(5000);
+  await page.click(
+    ".pv-top-card-v2-ctas.pt2.display-flex .pvs-profile-actions .artdeco-dropdown.artdeco-dropdown--placement-bottom.artdeco-dropdown--justification-right.ember-view button"
+  );
+  await page.waitForTimeout(5000);
+  await page.click("[aria-hidden='false'] [data-control-name='save_to_pdf']");
 
-  // await page._client.send("Page.setDownloadBehavior", {
-  //   behavior: "allow",
-  //   downloadPath: downloadPath,
-  // });
+  await page._client.send("Page.setDownloadBehavior", {
+    behavior: "allow",
+    downloadPath: saveFile,
+  });
 
-  // await page.click(
-  //   ".pv-top-card-v2-ctas.pt2.display-flex .pvs-profile-actions .artdeco-dropdown.artdeco-dropdown--placement-bottom.artdeco-dropdown--justification-left.ember-view button"
-  // );
-  // await page.click("[data-control-name='save_to_pdf']");
+  await page.waitForTimeout(6000);
+  console.log("Downloaded!");
 }
 
 scrapingRobot();
