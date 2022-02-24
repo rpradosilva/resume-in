@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/rpradosilva/resume-in#readme",
   "dependencies": {
+    "pdf2json": "^2.0.0",
     "puppeteer": "^13.3.2",
     "readline-sync": "^1.4.10"
   }

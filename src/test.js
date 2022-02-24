@@ -1,29 +1,12 @@
-const puppeteer = require("puppeteer");
 const fs = require("fs");
-const path = require("path");
+const PDFParser = require("pdf2json");
+const pdf = fs.readFileSync("./data/Profile.pdf");
 
-async function simplefileDownload() {
-  const browser = await puppeteer.launch({
-    headless: false,
-  });
+let pdfParser = new PDFParser();
 
-  const downloadPath = "./pdf";
-  const saveFile = path.resolve(downloadPath);
+pdfParser.loadPDF(pdf);
 
-  const page = await browser.newPage();
-  await page.goto("https://unsplash.com/photos/tn57JI3CewI");
-
-  if (!fs.existsSync(downloadPath)) {
-    fs.mkdirSync(downloadPath);
-  }
-
-  await page.click("[data-test='non-sponsored-photo-download-button']");
-
-  await page._client.send("Page.setDownloadBehavior", {
-    behavior: "allow",
-    downloadPath: saveFile,
-  });
-  await page.waitForTimeout(5000);
-  await browser.close();
-}
-simplefileDownload();
+pdfParser.on("pdfParser_dataReady", (pdfData) => {
+  console.log(pdfData);
+  fs.writeFile("./pdf2json/data.json", JSON.stringify(pdfData));
+});
