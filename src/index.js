@@ -11,8 +11,8 @@ async function scrapingRobot() {
   let credentials = await config();
 
   await login(page, credentials);
-  await profile(page);
-  await scraping(page);
+  let permalink = await profile(page);
+  await scraping(page, permalink);
 
   await browser.close();
   console.log(" ");

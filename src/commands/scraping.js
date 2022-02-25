@@ -2,18 +2,20 @@ module.exports = async (page) => {
   console.warn(">> Scraping data...");
   let name;
 
-  await page.waitForSelector(".pv-text-details__left-panel h1");
-  name = await capture(page, ".pv-text-details__left-panel h1");
+  name = await capture(page, ".pv-text-details__left-panel h1", "textContent");
 
   return console.log(`Test data extract, my name is ${name}`);
-
-  async function capture(page, selector) {
-    let element = ".pv-text-details__left-panel h1";
-
-    let content = await page.evaluate((element) => {
-      console.log(element);
-    }, element);
-
-    return content;
-  }
 };
+
+async function capture(page, selector, value) {
+  let content;
+  await page.waitForSelector(selector);
+
+  if (value == "textContent") {
+    content = await page.$eval(selector, (element) => element.textContent);
+  } else {
+    content = await page.$eval(selector, (element) => element.value);
+  }
+
+  return content;
+}

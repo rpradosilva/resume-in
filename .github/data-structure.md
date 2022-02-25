@@ -4,18 +4,18 @@
 
 All data related to the personal profile:
 
-| Category | Parameter    | Type     | Notes                                                         |
-| :------- | :----------- | :------- | :------------------------------------------------------------ |
+| Category | Parameter    | Type     | Notes                                                                                               |
+| :------- | :----------- | :------- | :-------------------------------------------------------------------------------------------------- |
 | Personal | `name`       | _string_ | https://www.linkedin.com/in/rpradosilva/edit/forms/intro/new/?profileFormEntryPoint=PROFILE_SECTION |
-| Personal | `photo`      | _string_ |                                                               |
-| Personal | `email`      | _string_ | https://www.linkedin.com/in/rpradosilva/overlay/contact-info/ |
-| Personal | `tel`        | _string_ | https://www.linkedin.com/in/rpradosilva/overlay/contact-info/ |
-| Personal | `bio`        | _string_ |                                                               |
-| Personal | `occupation` | _string_ | It's the same title in the last job                           |
-| Personal | `workTime`   | _string_ | Is the sum of all job durations                               |
-| Personal | `location`   | _object_ |                                                               |
-| Personal | `state`      | _string_ |                                                               |
-| Personal | `contry`     | _string_ |                                                               |
+| Personal | `photo`      | _string_ |                                                                                                     |
+| Personal | `email`      | _string_ | https://www.linkedin.com/in/rpradosilva/overlay/contact-info/                                       |
+| Personal | `tel`        | _string_ | https://www.linkedin.com/in/rpradosilva/overlay/contact-info/                                       |
+| Personal | `bio`        | _string_ |                                                                                                     |
+| Personal | `occupation` | _string_ | It's the same title in the last job                                                                 |
+| Personal | `workTime`   | _string_ | Is the sum of all job durations                                                                     |
+| Personal | `location`   | _object_ |                                                                                                     |
+| Personal | `state`      | _string_ |                                                                                                     |
+| Personal | `contry`     | _string_ |                                                                                                     |
 
 ```json
 {
