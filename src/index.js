@@ -1,9 +1,9 @@
 const puppeteer = require("puppeteer");
-const fs = require("fs");
+
 const config = require("./commands/config");
 const login = require("./commands/login");
 const profile = require("./commands/profile");
-const data = require("./commands/data");
+const scraping = require("./commands/scraping");
 
 async function scrapingRobot() {
   const browser = await puppeteer.launch();
@@ -12,7 +12,7 @@ async function scrapingRobot() {
 
   await login(page, credentials);
   await profile(page);
-  await data(page);
+  await scraping(page);
 
   await browser.close();
   console.log(" ");
