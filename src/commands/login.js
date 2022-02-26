@@ -1,7 +1,5 @@
 module.exports = async (page, credentials) => {
-  console.log("----------------------------------------");
-  console.log(" ");
-  console.warn("Logging...");
+  console.warn(">> Logging...");
 
   await page.goto("https://www.linkedin.com/");
   await page.click(".nav__button-secondary");
