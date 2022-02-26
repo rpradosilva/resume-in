@@ -2,20 +2,29 @@
 
 ## Personal
 
-All data related to the personal profile:
+All data related to the personal profile:\
 
-| Category | Parameter    | Type     | Notes                                                                                               |
-| :------- | :----------- | :------- | :-------------------------------------------------------------------------------------------------- |
-| Personal | `name`       | _string_ | https://www.linkedin.com/in/rpradosilva/edit/forms/intro/new/?profileFormEntryPoint=PROFILE_SECTION |
-| Personal | `photo`      | _string_ |                                                                                                     |
-| Personal | `email`      | _string_ | https://www.linkedin.com/in/rpradosilva/overlay/contact-info/                                       |
-| Personal | `tel`        | _string_ | https://www.linkedin.com/in/rpradosilva/overlay/contact-info/                                       |
-| Personal | `bio`        | _string_ |                                                                                                     |
-| Personal | `occupation` | _string_ | It's the same title in the last job                                                                 |
-| Personal | `workTime`   | _string_ | Is the sum of all job durations                                                                     |
-| Personal | `location`   | _object_ |                                                                                                     |
-| Personal | `state`      | _string_ |                                                                                                     |
-| Personal | `contry`     | _string_ |                                                                                                     |
+> Edit profile link: `https://www.linkedin.com/in/rpradosilva/edit/forms/intro/new/?profileFormEntryPoint=PROFILE_SECTION` - need id
+
+> Edit bio link: `https://www.linkedin.com/in/rpradosilva/edit/forms/summary/new/?profileFormEntryPoint=PROFILE_SECTION` - need id
+
+> Edit contact link: `https://www.linkedin.com/in/rpradosilva/edit/contact-info/`
+
+| Category | Parameter   | Type     | Notes                           |
+| :------- | :---------- | :------- | :------------------------------ |
+| Personal | `firstName` | _string_ | Edit profile link               |
+| Personal | `LastName`  | _string_ | Edit profile link               |
+| Personal | `headline`  | _string_ | Edit profile link               |
+| Personal | `position`  | _string_ | Edit profile link               |
+| Personal | `location`  | _object_ | ---                             |
+| Personal | `contry`    | _string_ | Edit profile link               |
+| Personal | `state`     | _string_ | Edit profile link               |
+| Personal | `contact`   | _object_ | ---                             |
+| Personal | `email`     | _string_ | Edit contact link               |
+| Personal | `tel`       | _string_ | Edit contact link               |
+| Personal | `summary`   | _string_ | Edit bio link                   |
+| Personal | `photo`     | _string_ |                                 |
+| Personal | `workTime`  | _string_ | Is the sum of all job durations |
 
 ```json
 {

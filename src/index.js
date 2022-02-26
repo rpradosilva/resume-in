@@ -4,6 +4,9 @@ const config = require("./commands/config");
 const login = require("./commands/login");
 const profile = require("./commands/profile");
 const scraping = require("./commands/scraping");
+const capture = require("./commands/capture");
+
+const identificator = require("./template/identificator");
 
 async function scrapingRobot() {
   const browser = await puppeteer.launch();
@@ -12,7 +15,7 @@ async function scrapingRobot() {
 
   await login(page, credentials);
   let permalink = await profile(page);
-  await scraping(page, permalink);
+  await scraping(page, capture, permalink, identificator);
 
   await browser.close();
   console.log(" ");

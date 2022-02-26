@@ -1,3 +1,19 @@
 {
-  "id": "document.querySelectorAll('input')[0].id"
+  "profileId": ".artdeco-text-input--input",
+  "personal": {
+    "firstName": "",
+    "LastName": "",
+    "headline": "",
+    "position": "",
+    "location": {
+      "contry": "",
+      "state": ""
+    },
+    "contact": {
+      "email": "",
+      "tel": ""
+    },
+    "summary": "",
+    "photo": ""
+  }
 }
