@@ -2,33 +2,32 @@
 
 ## Personal
 
-All data related to the personal profile:\
+All data related to the personal profile:
 
-> Edit profile link: `https://www.linkedin.com/in/rpradosilva/edit/forms/intro/new/?profileFormEntryPoint=PROFILE_SECTION` - need id
+> Edit profile link: `https://www.linkedin.com/in/user/edit/forms/intro/new/?profileFormEntryPoint=PROFILE_SECTION` - need id
 
-> Edit bio link: `https://www.linkedin.com/in/rpradosilva/edit/forms/summary/new/?profileFormEntryPoint=PROFILE_SECTION` - need id
+> Edit bio link: `https://www.linkedin.com/in/user/edit/forms/summary/new/?profileFormEntryPoint=PROFILE_SECTION` - need id
 
-> Edit contact link: `https://www.linkedin.com/in/rpradosilva/edit/contact-info/`
+> Edit contact link: `https://www.linkedin.com/in/user/edit/contact-info/`
 
-| Category | Parameter   | Type     | Notes                           |
-| :------- | :---------- | :------- | :------------------------------ |
-| Personal | `firstName` | _string_ | Edit profile link               |
-| Personal | `LastName`  | _string_ | Edit profile link               |
-| Personal | `headline`  | _string_ | Edit profile link               |
-| Personal | `position`  | _string_ | Edit profile link               |
-| Personal | `location`  | _object_ | ---                             |
-| Personal | `contry`    | _string_ | Edit profile link               |
-| Personal | `state`     | _string_ | Edit profile link               |
-| Personal | `contact`   | _object_ | ---                             |
-| Personal | `email`     | _string_ | Edit contact link               |
-| Personal | `tel`       | _string_ | Edit contact link               |
-| Personal | `summary`   | _string_ | Edit bio link                   |
-| Personal | `photo`     | _string_ |                                 |
-| Personal | `workTime`  | _string_ | Is the sum of all job durations |
+|       Status       | Category | Parameter   | Type     | Notes                           |
+| :----------------: | :------- | :---------- | :------- | :------------------------------ |
+| :white_check_mark: | Personal | `firstName` | _string_ | Edit profile link               |
+| :white_check_mark: | Personal | `LastName`  | _string_ | Edit profile link               |
+| :white_check_mark: | Personal | `position`  | _string_ | Edit profile link               |
+| :white_check_mark: | Personal | `location`  | _object_ | ---                             |
+| :white_check_mark: | Personal | `contry`    | _string_ | Edit profile link               |
+| :white_check_mark: | Personal | `state`     | _string_ | Edit profile link               |
+| :white_check_mark: | Personal | `contact`   | _object_ | ---                             |
+| :white_check_mark: | Personal | `email`     | _string_ | Edit contact link               |
+| :white_check_mark: | Personal | `tel`       | _string_ | Edit contact link               |
+| :white_check_mark: | Personal | `summary`   | _string_ | Edit bio link                   |
+| :white_check_mark: | Personal | `photo`     | _string_ |                                 |
+|                    | Personal | `workTime`  | _string_ | Is the sum of all job durations |
 
 ```json
 {
-  "name": "string",
+  "firstName": "string",
   "photo": "string",
   "email": "string",
   "tel": "string",

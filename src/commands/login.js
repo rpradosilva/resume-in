@@ -3,8 +3,8 @@ module.exports = async (page, credentials) => {
 
   await page.goto("https://www.linkedin.com/");
   await page.click(".nav__button-secondary");
-  await page.type("[id='username']", credentials.email, { delay: 200 });
-  await page.type("[id='password']", credentials.pass, { delay: 200 });
+  await page.type("[id='username']", credentials.email, { delay: 300 });
+  await page.type("[id='password']", credentials.pass, { delay: 300 });
   await page.click("[type='submit']");
 
   console.log("Login sucessfull!");
