@@ -63,20 +63,20 @@ For now is being captured:
 
 ```json
 {
-  "id": string,
+  "id": "string",
   "personal": {
-    "photo": string,
-    "firstName": string,
-    "lastName": string,
-    "summary": string,
-    "position": string,
+    "photo": "string",
+    "firstName": "string",
+    "lastName": "string",
+    "summary": "string",
+    "position": "string",
     "location": {
-      "country": string,
-      "state": string
+      "country": "string",
+      "state": "string"
     },
     "contact": {
-      "email": string,
-      "tel": string
+      "email": "string",
+      "tel": "string"
     }
   }
 }
