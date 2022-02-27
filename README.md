@@ -4,7 +4,7 @@
     <h2>
         ResumeIn
     </h2>
-    A LinkedIn web scraping to custom resume
+    A scraping your LinkedIn to JSON
 </div>
 <br>
 <div align="center">
@@ -23,6 +23,13 @@ It is a web application that scrapes your linkedin data to create a local databa
 
 ![nodeJS](https://img.shields.io/badge/-v16.14.0-ffffff?style=social&label=nodeJS)</br>![puppeteer](https://img.shields.io/github/package-json/dependency-version/rpradosilva/resume-in/puppeteer?style=social)</br>![readline-sync](https://img.shields.io/github/package-json/dependency-version/rpradosilva/resume-in/readline-sync?style=social)
 
+### Features
+
+- [x] Scraping LinkedIn data ([view data structure](/.github/data-structure.md))
+- [x] Save data to JSON
+- [ ] Timer to scraping (dynamic data)
+- [ ] Save data to PDF
+
 ### Other informations
 
 - Project under construction, view the working [here](https://github.com/rpradosilva/resume-in/projects/1).
@@ -32,7 +39,8 @@ It is a web application that scrapes your linkedin data to create a local databa
 
 ### Prerequisites
 
-The [NodeJS](https://nodejs.org/) is **required** to be able to run this project. Install in your machine and go to the next steps.
+- The [NodeJS](https://nodejs.org/) is **required** to be able to run this project. Install in your machine and go to the next steps.
+- LinkedIn Account
 
 ### Installation
 
@@ -41,10 +49,38 @@ The [NodeJS](https://nodejs.org/) is **required** to be able to run this project
 2. Install NPM Packages `npm i`
 
 3. Run project `npm start`
+4. Insert your **LinkedIn** credencials
 
 ### Usage
 
-- Insert your **LinkedIn** credencials
+- The application generate a JSON file, you can use to:
+  - Customize your portfolio with dynamic data
+  - Generete resume
+
+### JSON File
+
+For now is being captured:
+
+```json
+{
+  "id": string,
+  "personal": {
+    "photo": string,
+    "firstName": string,
+    "lastName": string,
+    "summary": string,
+    "position": string,
+    "location": {
+      "country": string,
+      "state": string
+    },
+    "contact": {
+      "email": string,
+      "tel": string
+    }
+  }
+}
+```
 
 ## License
 
