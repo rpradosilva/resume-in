@@ -1,7 +1,8 @@
 const readlineSync = require("readline-sync");
+const fs = require("fs");
 const credentialsPath = "./credentials.json";
 
-module.exports = async (fs) => {
+async function config() {
   let email, pass, save;
 
   if (fs.existsSync(credentialsPath)) {
@@ -33,4 +34,6 @@ module.exports = async (fs) => {
   }
 
   return { email, pass };
-};
+}
+
+module.exports = config;

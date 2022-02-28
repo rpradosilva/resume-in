@@ -1,4 +1,4 @@
-module.exports = async (page, selector, value) => {
+async function capture(page, selector, value) {
   let content;
 
   if (value == "textContent") {
@@ -17,4 +17,6 @@ module.exports = async (page, selector, value) => {
   }
 
   return content;
-};
+}
+
+module.exports = capture;

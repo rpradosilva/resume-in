@@ -1,30 +1,20 @@
 const puppeteer = require("puppeteer");
-const fs = require("fs");
 
-const config = require("./commands/config");
-const login = require("./commands/login");
-const profile = require("./commands/profile");
-const scraping = require("./commands/scraping");
-const capture = require("./commands/capture");
-const save = require("./commands/save");
+const config = require("./modules/config");
+const access = require("./modules/signin");
+const scraping = require("./modules/scraping");
+const output = require("./modules/output");
 
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  let credentials = await config(fs);
+  let credentials = await config();
 
-  await login(page, credentials);
-  let permalink = await profile(page);
-  let scraped = await scraping(page, capture, permalink);
+  await access.login(page, credentials);
+  let permalink = await access.profile(page);
+  let scraped = await scraping.data(page, permalink);
 
   await browser.close();
 
-  await save(fs, scraped);
-
-  const LinkedinData = fs.readFileSync("./data.json");
-
-  console.log(" ");
-  console.log("Generate file -------------------------");
-  console.log(JSON.parse(LinkedinData));
-  console.log("----------------------------------------");
+  await output.json(scraped);
 })();

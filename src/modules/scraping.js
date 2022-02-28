@@ -1,4 +1,6 @@
-module.exports = async (page, capture, permalink) => {
+const capture = require("./utils/capture");
+
+async function data(page, permalink) {
   console.log(" ");
   console.warn(">> Scraping data...");
 
@@ -104,4 +106,6 @@ module.exports = async (page, capture, permalink) => {
   console.log("Scraped successfully!");
 
   return { id, personal };
-};
+}
+
+module.exports = { data };
