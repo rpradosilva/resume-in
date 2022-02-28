@@ -66,8 +66,7 @@ For now is being captured:
   "id": "string",
   "personal": {
     "photo": "string",
-    "firstName": "string",
-    "lastName": "string",
+    "name": "string",
     "summary": "string",
     "position": "string",
     "location": {
