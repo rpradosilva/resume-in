@@ -4,6 +4,7 @@ const config = require("./modules/config");
 const access = require("./modules/signin");
 const scraping = require("./modules/scraping");
 const output = require("./modules/output");
+const data = require("../data.json");
 
 (async () => {
   const browser = await puppeteer.launch();
@@ -17,4 +18,9 @@ const output = require("./modules/output");
   await browser.close();
 
   await output.json(scraped);
+
+  console.log(" ");
+  console.log("Generate file -------------------------");
+  console.log(data);
+  console.log("----------------------------------------");
 })();

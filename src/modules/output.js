@@ -8,13 +8,6 @@ async function json(scraped) {
 
   fs.writeFileSync(dataPath, data, "utf-8");
   console.log("Saving successfully!");
-
-  const LinkedinData = fs.readFileSync("./data.json");
-
-  console.log(" ");
-  console.log("Generate file -------------------------");
-  console.log(JSON.parse(LinkedinData));
-  console.log("----------------------------------------");
 }
 
 module.exports = { json };

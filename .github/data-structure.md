@@ -27,16 +27,20 @@ All data related to the personal profile:
 
 ```json
 {
-  "firstName": "string",
-  "photo": "string",
-  "email": "string",
-  "tel": "string",
-  "bio": "string",
-  "occupation": "string",
-  "workTime": "string",
-  "location": {
-    "state": "string",
-    "contry": "string"
+  "id": "string",
+  "personal": {
+    "photo": "string",
+    "name": "string",
+    "summary": "string",
+    "position": "string",
+    "location": {
+      "country": "string",
+      "state": "string"
+    },
+    "contact": {
+      "email": "string",
+      "tel": "string"
+    }
   }
 }
 ```
