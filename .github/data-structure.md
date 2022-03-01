@@ -49,17 +49,19 @@ All data related to the personal profile:
 
 All data relating to professional experiences:
 
-| Category    | Parameter    | Type     | Notes                                                                                                    |
-| :---------- | :----------- | :------- | :------------------------------------------------------------------------------------------------------- |
-| Experiences | `experience` | _array_  | It can be just one job or more than one job. https://www.linkedin.com/in/rpradosilva/details/experience/ |
-| Experiences | `company`    | _string_ |                                                                                                          |
-| Experiences | `logo`       | _string_ | Image source                                                                                             |
-| Experiences | `title`      | _string_ |                                                                                                          |
-| Experiences | `duration`   | _string_ |                                                                                                          |
-| Experiences | `contract`   | _string_ | Type of employment contract                                                                              |
-| Experiences | `location`   | _object_ |                                                                                                          |
-| Experiences | `state`      | _string_ |                                                                                                          |
-| Experiences | `contry`     | _string_ |                                                                                                          |
+> Edit profile link: `https://www.linkedin.com/in/rpradosilva/details/experience/`
+
+| Status | Category    | Parameter    | Type     | Notes                                        |
+| :----: | :---------- | :----------- | :------- | :------------------------------------------- |
+|        | Experiences | `experience` | _array_  | It can be just one job or more than one job. |
+|        | Experiences | `company`    | _string_ |                                              |
+|        | Experiences | `logo`       | _string_ | Image source                                 |
+|        | Experiences | `title`      | _string_ |                                              |
+|        | Experiences | `duration`   | _string_ |                                              |
+|        | Experiences | `contract`   | _string_ | Type of employment contract                  |
+|        | Experiences | `location`   | _object_ |                                              |
+|        | Experiences | `state`      | _string_ |                                              |
+|        | Experiences | `contry`     | _string_ |                                              |
 
 ```json
 {

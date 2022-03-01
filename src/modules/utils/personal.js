@@ -1,6 +1,8 @@
 const capture = require("./capture");
 
 async function personal(page, url) {
+  console.log(">> Personal data...");
+
   let photo;
 
   if (
@@ -88,8 +90,6 @@ async function personal(page, url) {
       tel,
     },
   };
-
-  console.log("Scraped personal data!");
 
   return { id, personal };
 }

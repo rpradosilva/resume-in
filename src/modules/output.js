@@ -2,7 +2,7 @@ const fs = require("fs");
 
 async function json(scraped) {
   console.log(" ");
-  console.log(">> Saving JSON");
+  console.log(">> Generate JSON...");
   let dataPath = "./data.json";
   let data = JSON.stringify(scraped, null, 2);
 
