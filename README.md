@@ -39,7 +39,7 @@ It is a web application that scrapes your linkedin data to create a local databa
 
 ### Prerequisites
 
-- The [NodeJS](https://nodejs.org/) is **required** to be able to run this project. Install in your machine and go to the next steps.
+- The [NodeJS](https://nodejs.org/) is **required** to be able to run this project.
 - LinkedIn Account
 
 ### Installation
@@ -49,13 +49,16 @@ It is a web application that scrapes your linkedin data to create a local databa
 2. Install NPM Packages `npm i`
 
 3. Run project `npm start`
+
 4. Insert your **LinkedIn** credencials
+
+> The credentials will not be saved
 
 ### Usage
 
 - The application generate a JSON file, you can use to:
   - Customize your portfolio with dynamic data
-  - Generete resume
+  - Generate resume
 
 ### JSON File
 
