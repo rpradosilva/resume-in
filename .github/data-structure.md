@@ -4,6 +4,8 @@
 
 All data related to the personal profile:
 
+> Profile link: `https://www.linkedin.com/in/user/`
+
 > Edit profile link: `https://www.linkedin.com/in/user/edit/forms/intro/new/?profileFormEntryPoint=PROFILE_SECTION` - need id
 
 > Edit bio link: `https://www.linkedin.com/in/user/edit/forms/summary/new/?profileFormEntryPoint=PROFILE_SECTION` - need id
@@ -22,7 +24,7 @@ All data related to the personal profile:
 | :white_check_mark: | Personal | `email`     | _string_ | Edit contact link |
 | :white_check_mark: | Personal | `tel`       | _string_ | Edit contact link |
 | :white_check_mark: | Personal | `summary`   | _string_ | Edit bio link     |
-| :white_check_mark: | Personal | `photo`     | _string_ |                   |
+| :white_check_mark: | Personal | `photo`     | _string_ | Profile link      |
 
 ```json
 {
