@@ -48,7 +48,7 @@ All data related to the personal profile:
 
 All data relating to professional experiences:
 
-> Edit profile link: `https://www.linkedin.com/in/user/details/experience/`
+> Edit profile link: `https://www.linkedin.com/in/user/details/experience/` - need profile id + job id
 
 | Status | Category    | Parameter    | Type     | Notes                                        |
 | :----: | :---------- | :----------- | :------- | :------------------------------------------- |
@@ -66,6 +66,7 @@ All data relating to professional experiences:
 {
   "experience": [
     {
+      "id": "string",
       "company": "string",
       "logo": "string",
       "title": "string",
