@@ -12,11 +12,11 @@ async function data(page, permalink) {
   };
 
   let { id, personal } = await personalData(page, url);
-  let { experiences } = await experiencesData(page, url);
+  let experiences = await experiencesData(id, page, url);
 
   console.log("Scraped successfully!");
 
-  return { id, personal };
+  return { id, personal, experiences };
 }
 
 module.exports = { data };

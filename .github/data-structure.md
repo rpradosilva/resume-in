@@ -14,6 +14,7 @@ All data related to the personal profile:
 
 |       Status       | Category | Parameter   | Type     | Notes             |
 | :----------------: | :------- | :---------- | :------- | :---------------- |
+| :white_check_mark: | Personal | `id`        | _string_ | Edit profile link |
 | :white_check_mark: | Personal | `firstName` | _string_ | Edit profile link |
 | :white_check_mark: | Personal | `LastName`  | _string_ | Edit profile link |
 | :white_check_mark: | Personal | `position`  | _string_ | Edit profile link |
@@ -50,19 +51,20 @@ All data related to the personal profile:
 
 All data relating to professional experiences:
 
-> Edit profile link: `https://www.linkedin.com/in/user/details/experience/` - need profile id + job id
+> Edit job link: `https://www.linkedin.com/in/user/details/experience/edit/forms/{jobid}` - need profile id + job id
 
-| Status | Category    | Parameter    | Type     | Notes                                        |
-| :----: | :---------- | :----------- | :------- | :------------------------------------------- |
-|        | Experiences | `experience` | _array_  | It can be just one job or more than one job. |
-|        | Experiences | `company`    | _string_ |                                              |
-|        | Experiences | `logo`       | _string_ | Image source                                 |
-|        | Experiences | `title`      | _string_ |                                              |
-|        | Experiences | `duration`   | _string_ |                                              |
-|        | Experiences | `contract`   | _string_ | Type of employment contract                  |
-|        | Experiences | `location`   | _object_ |                                              |
-|        | Experiences | `state`      | _string_ |                                              |
-|        | Experiences | `contry`     | _string_ |                                              |
+|       Status       | Category    | Parameter    | Type     | Notes                                        |
+| :----------------: | :---------- | :----------- | :------- | :------------------------------------------- |
+| :white_check_mark: | Experiences | `experience` | _array_  | It can be just one job or more than one job. |
+| :white_check_mark: | Experiences | `id`         | _string_ | Edit job link                                |
+|                    | Experiences | `company`    | _string_ | Edit job link                                |
+|                    | Experiences | `logo`       | _string_ | Image source                                 |
+|                    | Experiences | `title`      | _string_ |                                              |
+|                    | Experiences | `duration`   | _string_ |                                              |
+|                    | Experiences | `contract`   | _string_ | Type of employment contract                  |
+|                    | Experiences | `location`   | _object_ |                                              |
+|                    | Experiences | `state`      | _string_ |                                              |
+|                    | Experiences | `contry`     | _string_ |                                              |
 
 ```json
 {

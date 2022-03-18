@@ -1,6 +1,6 @@
-const capture = require("./capture");
+// const capture = require("./capture");
 
-async function experiences(page, url) {
+async function experiences(id, page, url) {
   console.log(">> Experiences data...");
 
   await page.goto(url.experiences);
@@ -8,14 +8,18 @@ async function experiences(page, url) {
     ".pvs-entity.pvs-entity--padded.pvs-list__item--no-padding-when-nested"
   );
 
-  let items = await page.$$eval(
-    ".pvs-entity.pvs-entity--padded.pvs-list__item--no-padding-when-nested",
-    (items) => items.map((item) => item)
+  let items = [];
+  const jobLinks = await page.$$eval(
+    ".pvs-entity.pvs-entity--padded.pvs-list__item--no-padding-when-nested a.optional-action-target-wrapper.artdeco-button.artdeco-button--tertiary.artdeco-button--3.artdeco-button--muted.artdeco-button--circle.inline-flex.justify-center.align-self-flex-start",
+    (jobLinks) => jobLinks.map((link) => link.href)
   );
 
-  console.log(JSON.stringify(items[0]));
+  for (const link of jobLinks) {
+    let id = link.match(/(?:%2C)(.*)(?:%29)/i)[1].toString();
+    items.push({ id });
+  }
 
-  return "test";
+  return items;
 }
 
 module.exports = experiences;
