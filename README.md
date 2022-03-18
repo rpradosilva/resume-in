@@ -80,7 +80,12 @@ For now is being captured:
       "email": "string",
       "tel": "string"
     }
-  }
+  },
+  "experience": [
+    {
+      "id": "string"
+    }
+  ]
 }
 ```
 
