@@ -2,26 +2,27 @@ const capture = require("./capture");
 
 async function education(id, page, url) {
   console.log(">> Education data...");
+
   let items = [];
+
+  await page.goto(url.education);
+  await page.waitForSelector(
+    ".display-flex.justify-flex-start.align-items-center.pt3.ph3"
+  );
 
   if (
     (await page.$(
       ".pvs-entity.pvs-entity--padded.pvs-list__item--no-padding-when-nested"
     )) !== null
   ) {
-    await page.goto(url.education);
-    await page.waitForSelector(
-      ".pvs-entity.pvs-entity--padded.pvs-list__item--no-padding-when-nested"
-    );
-
-    const educations = await page.$$eval(
+    const courses = await page.$$eval(
       ".pvs-entity.pvs-entity--padded.pvs-list__item--no-padding-when-nested a.optional-action-target-wrapper.artdeco-button.artdeco-button--tertiary.artdeco-button--3.artdeco-button--muted.artdeco-button--circle.inline-flex.justify-center.align-self-flex-start",
-      (educations) => educations.map((education) => education.href)
+      (courses) => courses.map((course) => course.href)
     );
 
-    for (const education of educations) {
+    for (const course of courses) {
       let logo;
-      let schoolId = education.match(/(?:%2C)(.*)(?:%29)/i)[1].toString();
+      let schoolId = course.match(/(?:%2C)(.*)(?:%29)/i)[1].toString();
 
       await page.goto(`${url.education}edit/forms/${schoolId}/`);
       await page.waitForSelector(".pv4.ph5+.pv4.ph5");
