@@ -7,7 +7,7 @@ const output = require("./modules/output");
 // const data = require("../data.json");
 
 (async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   let credentials = await config();
 

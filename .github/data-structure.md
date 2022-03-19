@@ -12,20 +12,20 @@ All data related to the personal profile:
 
 > Edit contact link: `https://www.linkedin.com/in/user/edit/contact-info/`
 
-|       Status       | Category | Parameter   | Type     | Notes             |
-| :----------------: | :------- | :---------- | :------- | :---------------- |
-| :white_check_mark: | Personal | `id`        | _string_ | Edit profile link |
-| :white_check_mark: | Personal | `firstName` | _string_ | Edit profile link |
-| :white_check_mark: | Personal | `LastName`  | _string_ | Edit profile link |
-| :white_check_mark: | Personal | `position`  | _string_ | Edit profile link |
-| :white_check_mark: | Personal | `location`  | _object_ |                   |
-| :white_check_mark: | Personal | `contry`    | _string_ | Edit profile link |
-| :white_check_mark: | Personal | `state`     | _string_ | Edit profile link |
-| :white_check_mark: | Personal | `contact`   | _object_ |                   |
-| :white_check_mark: | Personal | `email`     | _string_ | Edit contact link |
-| :white_check_mark: | Personal | `tel`       | _string_ | Edit contact link |
-| :white_check_mark: | Personal | `summary`   | _string_ | Edit bio link     |
-| :white_check_mark: | Personal | `photo`     | _string_ | Profile link      |
+|       Status       | Category | Parameter  | Type     | Notes                                        |
+| :----------------: | :------- | :--------- | :------- | :------------------------------------------- |
+| :white_check_mark: | Personal | `id`       | _string_ | Edit profile link                            |
+| :white_check_mark: | Personal | `personal` | _object_ |                                              |
+| :white_check_mark: | Personal | `photo`    | _string_ | Profile link                                 |
+| :white_check_mark: | Personal | `name`     | _string_ | Edit profile link (`firstName` + `LastName`) |
+| :white_check_mark: | Personal | `summary`  | _string_ | Edit bio link                                |
+| :white_check_mark: | Personal | `position` | _string_ | Edit profile link                            |
+| :white_check_mark: | Personal | `location` | _object_ |                                              |
+| :white_check_mark: | Personal | `contry`   | _string_ | Edit profile link                            |
+| :white_check_mark: | Personal | `state`    | _string_ | Edit profile link                            |
+| :white_check_mark: | Personal | `contact`  | _object_ |                                              |
+| :white_check_mark: | Personal | `email`    | _string_ | Edit contact link                            |
+| :white_check_mark: | Personal | `tel`      | _string_ | Edit contact link                            |
 
 ```json
 {
@@ -58,15 +58,16 @@ All data relating to professional experiences:
 | :white_check_mark: | Experiences | `experience`      | _array_  |               |
 | :white_check_mark: | Experiences | `jobId`           | _string_ | Edit job link |
 | :white_check_mark: | Experiences | `company`         | _string_ | Edit job link |
+| :white_check_mark: | Experiences | `logo`            | _string_ | Edit job link |
 | :white_check_mark: | Experiences | `title`           | _string_ | Edit job link |
-| :white_check_mark: | Experiences | `duration`        | _object_ | Edit job link |
+| :white_check_mark: | Experiences | `description`     | _string_ | Edit job link |
+| :white_check_mark: | Experiences | `contract`        | _string_ | Edit job link |
+| :white_check_mark: | Experiences | `location`        | _string_ | Edit job link |
+| :white_check_mark: | Experiences | `duration`        | _object_ |               |
 | :white_check_mark: | Experiences | `startMonth`      | _string_ | Edit job link |
 | :white_check_mark: | Experiences | `startYear`       | _string_ | Edit job link |
 | :white_check_mark: | Experiences | `endMonth`        | _string_ | Edit job link |
 | :white_check_mark: | Experiences | `endYear`         | _string_ | Edit job link |
-| :white_check_mark: | Experiences | `contract`        | _string_ | Edit job link |
-| :white_check_mark: | Experiences | `location`        | _string_ | Edit job link |
-| :white_check_mark: | Experiences | `logo`            | _string_ | Edit job link |
 | :white_check_mark: | Experiences | `isTheCurrentJob` | _bolean_ | Edit job link |
 
 ```json
@@ -77,6 +78,7 @@ All data relating to professional experiences:
       "company": "string",
       "logo": "string",
       "title": "string",
+      "description": "string",
       "contract": "string",
       "location": "string",
       "duration": {
@@ -95,24 +97,43 @@ All data relating to professional experiences:
 
 All information related to education:
 
-> Edit profile link: `https://www.linkedin.com/in/user/details/education/`
+> Edit education link: `https://www.linkedin.com/in/user/details/education/`
 
-| Status | Category  | Parameter   | Type     | Notes      |
-| :----: | :-------- | :---------- | :------- | ---------- |
-|        | Education | `education` | _array_  |            |
-|        | Education | `course`    | _string_ |            |
-|        | Education | `logo`      | _string_ |            |
-|        | Education | `type`      | _string_ | Level type |
-|        | Education | `duration`  | _string_ |            |
+|       Status       | Category  | Parameter       | Type     | Notes               |
+| :----------------: | :-------- | :-------------- | :------- | ------------------- |
+| :white_check_mark: | Education | `education`     | _array_  |                     |
+| :white_check_mark: | Education | `schoolId`      | _string_ | Edit education link |
+| :white_check_mark: | Education | `school`        | _string_ | Edit education link |
+| :white_check_mark: | Education | `logo`          | _string_ | Edit education link |
+| :white_check_mark: | Education | `degree`        | _string_ | Edit education link |
+| :white_check_mark: | Education | `fieldsOfStudy` | _string_ | Edit education link |
+| :white_check_mark: | Education | `grade`         | _string_ | Edit education link |
+| :white_check_mark: | Education | `activities`    | _string_ | Edit education link |
+| :white_check_mark: | Education | `notes`         | _string_ | Edit education link |
+| :white_check_mark: | Education | `duration`      | _object_ |                     |
+| :white_check_mark: | Education | `startMonth`    | _string_ | Edit education link |
+| :white_check_mark: | Education | `startYear`     | _string_ | Edit education link |
+| :white_check_mark: | Education | `endMonth`      | _string_ | Edit education link |
+| :white_check_mark: | Education | `endYear`       | _string_ | Edit education link |
 
 ```json
 {
   "education": [
     {
-      "course": "string",
+      "schoolId": "string",
+      "school": "string",
       "logo": "string",
-      "type": "string",
-      "duration": "string"
+      "degree": "string",
+      "fieldsOfStudy": "string",
+      "grade": "string",
+      "activities": "string",
+      "notes": "string",
+      "duration": {
+        "startMonth": "string",
+        "startYear": "string",
+        "endMonth": "string",
+        "endYear": "string"
+      }
     }
   ]
 }
@@ -144,76 +165,5 @@ All information related to certificates and licenses:
       "expire": "string"
     }
   ]
-}
-```
-
-## Other informations
-
-| Status | Category | Parameter  | Type     | Notes                           |
-| :----: | :------- | :--------- | :------- | :------------------------------ |
-|        | Other    | `other`    | _object_ |                                 |
-|        | Other    | `workTime` | _string_ | Is the sum of all job durations |
-
-```json
-{
-  "other": {
-    "workTime": "string"
-  }
-}
-```
-
-## Full structure
-
-```json
-{
-  "id": "string",
-  "personal": {
-    "photo": "string",
-    "name": "string",
-    "summary": "string",
-    "position": "string",
-    "location": {
-      "country": "string",
-      "state": "string"
-    },
-    "contact": {
-      "email": "string",
-      "tel": "string"
-    }
-  },
-  "experience": [
-    {
-      "jobId": "string",
-      "company": "string",
-      "logo": "string",
-      "title": "string",
-      "duration": "string",
-      "contract": "string",
-      "location": {
-        "state": "string",
-        "contry": "string"
-      }
-    }
-  ],
-  "education": [
-    {
-      "course": "string",
-      "logo": "string",
-      "type": "string",
-      "duration": "string"
-    }
-  ],
-  "certificate": [
-    {
-      "company": "string",
-      "logo": "string",
-      "title": "string",
-      "published": "string",
-      "expire": "string"
-    }
-  ],
-  "other": {
-    "workTime": "string"
-  }
 }
 ```
