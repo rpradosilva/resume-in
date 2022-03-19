@@ -162,7 +162,8 @@ All information related to certificates and licenses:
 | :white_check_mark: | Certificates | `notExpire`    | _bolean_ | Edit certified link |
 
 ```json
-"certifications": [
+{
+  "certifications": [
     {
       "certifiedId": "string",
       "name": "string",
@@ -179,4 +180,5 @@ All information related to certificates and licenses:
       "notExpire": true
     }
   ]
+}
 ```

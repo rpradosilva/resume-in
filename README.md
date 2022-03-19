@@ -33,7 +33,6 @@ It is a web application that scrapes your linkedin data to create a local databa
 ### Other informations
 
 - Project under construction, view the working [here](https://github.com/rpradosilva/resume-in/projects/1).
-- [View data structure](/.github/data-structure.md)
 
 ## Getting Started
 
@@ -60,9 +59,7 @@ It is a web application that scrapes your linkedin data to create a local databa
   - Customize your portfolio with dynamic data
   - Generate resume
 
-### JSON File
-
-For now is being captured:
+### JSON File structure
 
 ```json
 {
@@ -84,7 +81,54 @@ For now is being captured:
   "experience": [
     {
       "jobId": "string",
-      "company": "string"
+      "company": "string",
+      "logo": "string",
+      "title": "string",
+      "description": "string",
+      "contract": "string",
+      "location": "string",
+      "duration": {
+        "startMonth": "string",
+        "startYear": "string",
+        "endMonth": "string",
+        "endYear": "string"
+      },
+      "isTheCurrentJob": true
+    }
+  ],
+  "education": [
+    {
+      "schoolId": "string",
+      "school": "string",
+      "logo": "string",
+      "degree": "string",
+      "fieldsOfStudy": "string",
+      "grade": "string",
+      "activities": "string",
+      "notes": "string",
+      "duration": {
+        "startMonth": "string",
+        "startYear": "string",
+        "endMonth": "string",
+        "endYear": "string"
+      }
+    }
+  ],
+  "certifications": [
+    {
+      "certifiedId": "string",
+      "name": "string",
+      "company": "string",
+      "logo": "string",
+      "license": "string",
+      "certifiedUrl": "string",
+      "duration": {
+        "startMonth": "string",
+        "startYear": "string",
+        "endMonth": "string",
+        "endYear": "string"
+      },
+      "notExpire": true
     }
   ]
 }
