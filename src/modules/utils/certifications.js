@@ -1,7 +1,7 @@
 const capture = require("./capture");
 
 async function certifications(id, page, url) {
-  console.log(">> certifications data...");
+  console.log(">> Certifications data...");
 
   let items = [];
 
@@ -21,16 +21,99 @@ async function certifications(id, page, url) {
     );
 
     for (const certified of certificates) {
-      let logo;
       let certifiedId = certified.match(/(?:%2C)(.*)(?:%29)/i)[1].toString();
+      let logo;
 
-      console.log(certifiedId);
+      await page.goto(`${url.certifications}edit/forms/${certifiedId}/`);
+      await page.waitForSelector(".pv4.ph5");
 
-      items.push({ certifiedId });
+      let name = await capture(
+        page,
+        `#single-typeahead-entity-form-component-profileEditFormElement-CERTIFICATION-profileCertification-${id}-${certifiedId}-name`,
+        "value"
+      );
+
+      let company = await capture(
+        page,
+        `#single-typeahead-entity-form-component-profileEditFormElement-CERTIFICATION-profileCertification-${id}-${certifiedId}-company`,
+        "value"
+      );
+
+      if (
+        (await page.$(
+          ".ivm-view-attr__img--centered.ivm-view-attr__entity-img--company.fb-single-typeahead-entity__image.lazy-image.ember-view"
+        )) !== null
+      ) {
+        logo = await capture(
+          page,
+          `.ivm-view-attr__img--centered.ivm-view-attr__entity-img--company.fb-single-typeahead-entity__image.lazy-image.ember-view`,
+          "src"
+        );
+      } else {
+        logo = "";
+      }
+
+      let startMonth = await capture(
+        page,
+        `#date-range-form-component-profileEditFormElement-CERTIFICATION-profileCertification-${id}-${certifiedId}-dateRange-start-date`,
+        "value"
+      );
+
+      let startYear = await capture(
+        page,
+        `#date-range-form-component-profileEditFormElement-CERTIFICATION-profileCertification-${id}-${certifiedId}-dateRange-start-date-year-select`,
+        "value"
+      );
+
+      let endMonth = await capture(
+        page,
+        `#date-range-form-component-profileEditFormElement-CERTIFICATION-profileCertification-${id}-${certifiedId}-dateRange-end-date`,
+        "value"
+      );
+
+      let endYear = await capture(
+        page,
+        `#date-range-form-component-profileEditFormElement-CERTIFICATION-profileCertification-${id}-${certifiedId}-dateRange-end-date-year-select`,
+        "value"
+      );
+
+      let license = await capture(
+        page,
+        `#single-line-text-form-component-profileEditFormElement-CERTIFICATION-profileCertification-${id}-${certifiedId}-licenseNumber`,
+        "value"
+      );
+
+      let certifiedUrl = await capture(
+        page,
+        `#single-line-text-form-component-profileEditFormElement-CERTIFICATION-profileCertification-${id}-${certifiedId}-url-error`,
+        "value"
+      );
+
+      let notExpire = await page.$eval(
+        ".fb-text-selectable__option.display-flex input",
+        (element) => element.checked
+      );
+
+      let duration = {
+        startMonth,
+        startYear,
+        endMonth,
+        endYear,
+      };
+
+      items.push({
+        certifiedId,
+        name,
+        company,
+        logo,
+        license,
+        certifiedUrl,
+        duration,
+        notExpire,
+      });
     }
   } else {
     items = [];
-    console.log("pulou");
   }
 
   return items;

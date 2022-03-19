@@ -35,12 +35,12 @@ async function education(id, page, url) {
 
       if (
         (await page.$(
-          ".ivm-view-attr__img--centered.ivm-view-attr__entity-img--company.fb-single-typeahead-entity__image.lazy-image.ember-view"
+          ".ivm-view-attr__img--centered.ivm-view-attr__entity-img--school.fb-single-typeahead-entity__image.lazy-image.ember-view"
         )) !== null
       ) {
         logo = await capture(
           page,
-          `.ivm-view-attr__img--centered.ivm-view-attr__entity-img--company.fb-single-typeahead-entity__image.lazy-image.ember-view`,
+          `.ivm-view-attr__img--centered.ivm-view-attr__entity-img--school.fb-single-typeahead-entity__image.lazy-image.ember-view`,
           "src"
         );
       } else {

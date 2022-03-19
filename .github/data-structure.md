@@ -97,7 +97,7 @@ All data relating to professional experiences:
 
 All information related to education:
 
-> Edit education link: `https://www.linkedin.com/in/user/details/education/`
+> Edit education link: `https://www.linkedin.com/in/user/details/education/` - need profile id + school id
 
 |       Status       | Category  | Parameter       | Type     | Notes               |
 | :----------------: | :-------- | :-------------- | :------- | ------------------- |
@@ -143,27 +143,40 @@ All information related to education:
 
 All information related to certificates and licenses:
 
-> Edit profile link: `https://www.linkedin.com/in/user/details/certifications/`
+> Edit certified link: `https://www.linkedin.com/in/user/details/certifications/` - need profile id + certified id
 
-| Status | Category     | Parameter     | Type     | Notes                                 |
-| :----: | :----------- | :------------ | :------- | :------------------------------------ |
-|        | Certificates | `certificate` | _array_  |                                       |
-|        | Certificates | `company`     | _string_ |                                       |
-|        | Certificates | `logo`        | _string_ |                                       |
-|        | Certificates | `title`       | _string_ | Name of the certificate or licence    |
-|        | Certificates | `published`   | _string_ | When certificate or licence published |
-|        | Certificates | `expire`      | _string_ | When certificate or licence expire    |
+|       Status       | Category     | Parameter      | Type     | Notes               |
+| :----------------: | :----------- | :------------- | :------- | :------------------ |
+| :white_check_mark: | Certificates | `certificate`  | _array_  |                     |
+| :white_check_mark: | Certificates | `certifiedId`  | _string_ | Edit certified link |
+| :white_check_mark: | Certificates | `name`         | _string_ | Edit certified link |
+| :white_check_mark: | Certificates | `company`      | _string_ | Edit certified link |
+| :white_check_mark: | Certificates | `logo`         | _string_ | Edit certified link |
+| :white_check_mark: | Certificates | `licence`      | _string_ | Edit certified link |
+| :white_check_mark: | Certificates | `certifiedUrl` | _string_ | Edit certified link |
+| :white_check_mark: | Certificates | `duration`     | _object_ |                     |
+| :white_check_mark: | Certificates | `startMonth`   | _string_ | Edit certified link |
+| :white_check_mark: | Certificates | `startYear`    | _string_ | Edit certified link |
+| :white_check_mark: | Certificates | `endMonth`     | _string_ | Edit certified link |
+| :white_check_mark: | Certificates | `endYear`      | _string_ | Edit certified link |
+| :white_check_mark: | Certificates | `notExpire`    | _bolean_ | Edit certified link |
 
 ```json
-{
-  "certificate": [
+"certifications": [
     {
+      "certifiedId": "string",
+      "name": "string",
       "company": "string",
       "logo": "string",
-      "title": "string",
-      "published": "string",
-      "expire": "string"
+      "license": "string",
+      "certifiedUrl": "string",
+      "duration": {
+        "startMonth": "string",
+        "startYear": "string",
+        "endMonth": "string",
+        "endYear": "string"
+      },
+      "notExpire": true
     }
   ]
-}
 ```

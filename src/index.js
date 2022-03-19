@@ -1,14 +1,13 @@
 const puppeteer = require("puppeteer");
-
 const config = require("./modules/config");
 const access = require("./modules/signin");
 const scraping = require("./modules/scraping");
 const output = require("./modules/output");
-// const data = require("../data.json");
 
 (async () => {
   const browser = await puppeteer.launch();
-  const page = await browser.newPage();
+  const context = await browser.createIncognitoBrowserContext();
+  const page = await context.newPage();
   let credentials = await config();
 
   await access.login(page, credentials);
@@ -18,9 +17,4 @@ const output = require("./modules/output");
   await browser.close();
 
   await output.json(scraped);
-
-  // console.log(" ");
-  // console.log("Generate file -------------------------");
-  // console.log(data);
-  // console.log("----------------------------------------");
 })();
