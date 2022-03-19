@@ -53,33 +53,39 @@ All data relating to professional experiences:
 
 > Edit job link: `https://www.linkedin.com/in/user/details/experience/edit/forms/{jobid}` - need profile id + job id
 
-|       Status       | Category    | Parameter    | Type     | Notes                                        |
-| :----------------: | :---------- | :----------- | :------- | :------------------------------------------- |
-| :white_check_mark: | Experiences | `experience` | _array_  | It can be just one job or more than one job. |
-| :white_check_mark: | Experiences | `id`         | _string_ | Edit job link                                |
-|                    | Experiences | `company`    | _string_ | Edit job link                                |
-|                    | Experiences | `logo`       | _string_ | Image source                                 |
-|                    | Experiences | `title`      | _string_ |                                              |
-|                    | Experiences | `duration`   | _string_ |                                              |
-|                    | Experiences | `contract`   | _string_ | Type of employment contract                  |
-|                    | Experiences | `location`   | _object_ |                                              |
-|                    | Experiences | `state`      | _string_ |                                              |
-|                    | Experiences | `contry`     | _string_ |                                              |
+|       Status       | Category    | Parameter         | Type     | Notes         |
+| :----------------: | :---------- | :---------------- | :------- | :------------ |
+| :white_check_mark: | Experiences | `experience`      | _array_  |               |
+| :white_check_mark: | Experiences | `jobId`           | _string_ | Edit job link |
+| :white_check_mark: | Experiences | `company`         | _string_ | Edit job link |
+| :white_check_mark: | Experiences | `title`           | _string_ | Edit job link |
+| :white_check_mark: | Experiences | `duration`        | _object_ | Edit job link |
+| :white_check_mark: | Experiences | `startMonth`      | _string_ | Edit job link |
+| :white_check_mark: | Experiences | `startYear`       | _string_ | Edit job link |
+| :white_check_mark: | Experiences | `endMonth`        | _string_ | Edit job link |
+| :white_check_mark: | Experiences | `endYear`         | _string_ | Edit job link |
+| :white_check_mark: | Experiences | `contract`        | _string_ | Edit job link |
+| :white_check_mark: | Experiences | `location`        | _string_ | Edit job link |
+| :white_check_mark: | Experiences | `logo`            | _string_ | Edit job link |
+| :white_check_mark: | Experiences | `isTheCurrentJob` | _bolean_ | Edit job link |
 
 ```json
 {
   "experience": [
     {
-      "id": "string",
+      "jobId": "string",
       "company": "string",
       "logo": "string",
       "title": "string",
-      "duration": "string",
       "contract": "string",
-      "location": {
-        "state": "string",
-        "contry": "string"
-      }
+      "location": "string",
+      "duration": {
+        "startMonth": "string",
+        "startYear": "string",
+        "endMonth": "string",
+        "endYear": "string"
+      },
+      "isTheCurrentJob": true
     }
   ]
 }
@@ -177,6 +183,7 @@ All information related to certificates and licenses:
   },
   "experience": [
     {
+      "jobId": "string",
       "company": "string",
       "logo": "string",
       "title": "string",

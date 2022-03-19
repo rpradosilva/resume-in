@@ -83,7 +83,8 @@ For now is being captured:
   },
   "experience": [
     {
-      "id": "string"
+      "jobId": "string",
+      "company": "string"
     }
   ]
 }
