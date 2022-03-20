@@ -25,10 +25,8 @@ It is a web application that scrapes your linkedin data to create a local databa
 
 ### Features
 
-- [x] Scraping LinkedIn data
-- [x] Save data to JSON
-- [ ] Timer to scraping (dynamic data)
-- [ ] Save data to PDF
+- Scraping LinkedIn data
+- Save data to JSON
 
 > Follow our work [here](https://github.com/rpradosilva/resume-in/projects/1).
 
