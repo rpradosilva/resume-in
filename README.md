@@ -49,6 +49,8 @@ It is a web application that scrapes your linkedin data to create a local databa
 
 4. Insert your **LinkedIn** credencials
 
+> **Important:** Massive usage may lock your LinkedIn account or block your login with captcha.
+
 ### Usage
 
 - The application generate a JSON file, you can use to:
