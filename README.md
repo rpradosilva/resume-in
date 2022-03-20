@@ -65,10 +65,7 @@ JSON file structure:
 
 ```json
 {
-  // LinkedIn Id
   "id": "string",
-
-  // Personal data
   "personal": {
     "photo": "string",
     "name": "string",
@@ -83,8 +80,6 @@ JSON file structure:
       "tel": "string"
     }
   },
-
-  // Experience data
   "experience": [
     {
       "jobId": "string",
@@ -103,8 +98,6 @@ JSON file structure:
       "isTheCurrentJob": true
     }
   ],
-
-  // Education data
   "education": [
     {
       "schoolId": "string",
@@ -123,8 +116,6 @@ JSON file structure:
       }
     }
   ],
-
-  // Certifications data
   "certifications": [
     {
       "certifiedId": "string",
