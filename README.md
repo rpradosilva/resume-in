@@ -30,9 +30,7 @@ It is a web application that scrapes your linkedin data to create a local databa
 - [ ] Timer to scraping (dynamic data)
 - [ ] Save data to PDF
 
-### Other informations
-
-- Project under construction, view the working [here](https://github.com/rpradosilva/resume-in/projects/1).
+> Follow our work [here](https://github.com/rpradosilva/resume-in/projects/1).
 
 ## Getting Started
 
@@ -59,11 +57,16 @@ It is a web application that scrapes your linkedin data to create a local databa
   - Customize your portfolio with dynamic data
   - Generate resume
 
-### JSON File structure
+### Output file
+
+To save your scrapped data, a JSON file is generated with the structure:
 
 ```json
 {
+  // LinkedIn Id
   "id": "string",
+
+  // Personal data
   "personal": {
     "photo": "string",
     "name": "string",
@@ -78,6 +81,8 @@ It is a web application that scrapes your linkedin data to create a local databa
       "tel": "string"
     }
   },
+
+  // Experience data
   "experience": [
     {
       "jobId": "string",
@@ -96,6 +101,8 @@ It is a web application that scrapes your linkedin data to create a local databa
       "isTheCurrentJob": true
     }
   ],
+
+  // Education data
   "education": [
     {
       "schoolId": "string",
@@ -114,6 +121,8 @@ It is a web application that scrapes your linkedin data to create a local databa
       }
     }
   ],
+
+  // Certifications data
   "certifications": [
     {
       "certifiedId": "string",
