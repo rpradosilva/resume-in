@@ -25,7 +25,7 @@ It is a web application that scrapes your linkedin data to create a local databa
 
 ### Features
 
-- [x] Scraping LinkedIn data ([view data structure](/.github/data-structure.md))
+- [x] Scraping LinkedIn data
 - [x] Save data to JSON
 - [ ] Timer to scraping (dynamic data)
 - [ ] Save data to PDF
@@ -59,7 +59,11 @@ It is a web application that scrapes your linkedin data to create a local databa
 
 ### Output file
 
-To save your scrapped data, a JSON file is generated with the structure:
+To save your scrapped data, a JSON file is generated
+
+JSON file structure:
+
+> [See more about data structure](/.github/data-structure.md)
 
 ```json
 {
