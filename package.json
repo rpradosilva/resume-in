@@ -24,6 +24,6 @@
   "dependencies": {
     "puppeteer": "^13.3.2",
     "readline-sync": "^1.4.10",
-    "spinnies": "^0.5.1"
+    "spinnies": "^0.3.2"
   }
 }
