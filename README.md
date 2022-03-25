@@ -19,10 +19,6 @@
 
 It is a web application that scrapes your linkedin data to create a local database of your information to keep your portfolio up to date.
 
-### Technologies
-
-![nodeJS](https://img.shields.io/badge/-v16.14.0-ffffff?style=social&label=nodeJS)</br>![puppeteer](https://img.shields.io/github/package-json/dependency-version/rpradosilva/resume-in/puppeteer?style=social)</br>![readline-sync](https://img.shields.io/github/package-json/dependency-version/rpradosilva/resume-in/readline-sync?style=social)
-
 ### Features
 
 - Scraping LinkedIn data
@@ -135,6 +131,10 @@ JSON file structure:
   ]
 }
 ```
+
+### Dependencies
+
+![nodeJS](https://img.shields.io/badge/-v16.14.0-ffffff?style=social&label=nodeJS)</br>![puppeteer](https://img.shields.io/github/package-json/dependency-version/rpradosilva/resume-in/puppeteer?style=social)</br>![readline-sync](https://img.shields.io/github/package-json/dependency-version/rpradosilva/resume-in/readline-sync?style=social)</br>![spinnies](https://img.shields.io/github/package-json/dependency-version/rpradosilva/resume-in/spinnies?style=social)
 
 ## License
 
