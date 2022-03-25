@@ -2,9 +2,10 @@ const personalData = require("./utils/personal");
 const experiencesData = require("./utils/experiences");
 const educationData = require("./utils/education");
 const certificationData = require("./utils/certifications");
+const spinnies = require("./utils/loader");
 
 async function data(page, permalink) {
-  console.warn(">> Scraping...");
+  spinnies.add("scraping", { text: "Scraping" });
 
   const url = {
     personal: `${permalink}edit/forms/intro/new/?profileFormEntryPoint=PROFILE_SECTION`,
@@ -15,12 +16,23 @@ async function data(page, permalink) {
     certifications: `${permalink}details/certifications/`,
   };
 
+  spinnies.add("scraping-personal", { text: "Personal data" });
   let { id, personal } = await personalData(page, url);
-  let experiences = await experiencesData(id, page, url);
-  let education = await educationData(id, page, url);
-  let certifications = await certificationData(id, page, url);
+  spinnies.succeed("scraping-personal", { text: "Personal data" });
 
-  console.log("Scraped successfully!");
+  spinnies.add("scraping-experiences", { text: "Experiences data" });
+  let experiences = await experiencesData(id, page, url);
+  spinnies.succeed("scraping-experiences", { text: "Experiences data" });
+
+  spinnies.add("scraping-education", { text: "Education data" });
+  let education = await educationData(id, page, url);
+  spinnies.succeed("scraping-education", { text: "Education data" });
+
+  spinnies.add("scraping-certifications", { text: "Certifications data" });
+  let certifications = await certificationData(id, page, url);
+  spinnies.succeed("scraping-certifications", { text: "Certifications data" });
+
+  spinnies.succeed("scraping", { text: "Scraped successfully" });
 
   return { id, personal, experiences, education, certifications };
 }

@@ -1,13 +1,14 @@
 const fs = require("fs");
+const spinnies = require("./utils/loader");
 
 async function json(scraped) {
-  console.log(" ");
-  console.log(">> Generate JSON...");
+  spinnies.add("generate", { text: "Generate JSON" });
+
   let dataPath = "./data.json";
   let data = JSON.stringify(scraped, null, 2);
-
   fs.writeFileSync(dataPath, data, "utf-8");
-  console.log("Saving successfully!");
+
+  spinnies.succeed("generate", { text: "Saving successfully" });
 }
 
 module.exports = { json };

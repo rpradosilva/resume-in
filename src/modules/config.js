@@ -1,17 +1,19 @@
 const readlineSync = require("readline-sync");
 const fs = require("fs");
 const credentialsPath = "./credentials.json";
+const spinnies = require("./utils/loader");
 
 async function config() {
   let email, pass, save;
 
   if (fs.existsSync(credentialsPath)) {
-    console.log(">> Reading credentials...");
+    spinnies.add("credentials", { text: "Reading credentials" });
 
     let credentials = JSON.parse(fs.readFileSync(credentialsPath));
-
     email = credentials.email;
     pass = credentials.pass;
+
+    spinnies.succeed("credentials", { text: "Credentials checked" });
   } else {
     console.log("LinkedIn Login -------------------------");
 

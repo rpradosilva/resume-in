@@ -1,8 +1,6 @@
 const capture = require("./capture");
 
 async function experiences(id, page, url) {
-  console.log(">> Experiences data...");
-
   let items = [];
 
   await page.goto(url.experiences);

@@ -23,6 +23,7 @@
   "homepage": "https://github.com/rpradosilva/resume-in#readme",
   "dependencies": {
     "puppeteer": "^13.3.2",
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "spinnies": "^0.5.1"
   }
 }

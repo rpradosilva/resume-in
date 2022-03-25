@@ -1,8 +1,6 @@
 const capture = require("./capture");
 
 async function certifications(id, page, url) {
-  console.log(">> Certifications data...");
-
   let items = [];
 
   await page.goto(url.certifications);

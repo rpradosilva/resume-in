@@ -1,8 +1,6 @@
 const capture = require("./capture");
 
 async function personal(page, url) {
-  console.log(">> Personal data...");
-
   let photo;
 
   if (

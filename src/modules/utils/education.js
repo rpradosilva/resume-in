@@ -1,8 +1,6 @@
 const capture = require("./capture");
 
 async function education(id, page, url) {
-  console.log(">> Education data...");
-
   let items = [];
 
   await page.goto(url.education);
