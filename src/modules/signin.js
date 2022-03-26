@@ -1,25 +1,49 @@
 const spinnies = require("./utils/loader");
 
 async function login(page, credentials) {
-  spinnies.add("login", { text: "Logging" });
+  const LOADER = {
+    ID: "login",
+    TEXT: {
+      ADD: "Logging",
+      SUCCEED: "Login sucessfull",
+    },
+  };
+  const SELECTOR = {
+    LOGIN: {
+      PAGE: ".nav__button-secondary",
+      USER: "[id='username']",
+      PASS: "[id='password']",
+      SUBMIT: "[type='submit']",
+    },
+  };
 
+  spinnies.add(LOADER.ID, { text: LOADER.TEXT.ADD });
   await page.goto("https://www.linkedin.com/");
-  await page.click(".nav__button-secondary");
-  await page.type("[id='username']", credentials.email, { delay: 300 });
-  await page.type("[id='password']", credentials.pass, { delay: 300 });
-  await page.click("[type='submit']");
-
-  spinnies.succeed("login", { text: "Login sucessfull" });
+  await page.click(SELECTOR.LOGIN.PAGE);
+  await page.type(SELECTOR.LOGIN.USER, credentials.email, { delay: 300 });
+  await page.type(SELECTOR.LOGIN.PASS, credentials.pass, { delay: 300 });
+  await page.click(SELECTOR.LOGIN.SUBMIT);
+  spinnies.succeed(LOADER.ID, { text: LOADER.TEXT.SUCCEED });
 }
 async function profile(page) {
-  spinnies.add("profile", { text: "Access profile" });
+  const LOADER = {
+    ID: "profile",
+    TEXT: {
+      ADD: "Access profile",
+      SUCCEED: "Profile Loaded",
+    },
+  };
+  const SELECTOR = {
+    PROFILE: {
+      PAGE: ".feed-identity-module__actor-meta.break-words a",
+    },
+  };
 
-  await page.waitForSelector(".feed-identity-module__actor-meta.break-words a");
-  await page.click(".feed-identity-module__actor-meta.break-words a");
+  spinnies.add(LOADER.ID, { text: LOADER.TEXT.ADD });
+  await page.waitForSelector(SELECTOR.PROFILE.PAGE);
+  await page.click(SELECTOR.PROFILE.PAGE);
   await page.waitForNavigation();
-
-  spinnies.succeed("profile", { text: "Profile Loaded" });
-
+  spinnies.succeed(LOADER.ID, { text: LOADER.TEXT.SUCCEED });
   return await page.url();
 }
 

@@ -2,12 +2,11 @@ const capture = require("./capture");
 
 async function personal(page, url) {
   let photo;
+  let ifPhotoExists = await page.evaluate(() => {
+    return document.querySelector(".ember-view.profile-photo-edit__preview");
+  });
 
-  if (
-    (await page.evaluate(() => {
-      return document.querySelector(".ember-view.profile-photo-edit__preview");
-    })) != null
-  ) {
+  if (ifPhotoExists != null) {
     photo = await capture(
       page,
       ".ember-view.profile-photo-edit__preview",

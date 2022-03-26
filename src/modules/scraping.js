@@ -15,24 +15,71 @@ async function data(page, permalink) {
     education: `${permalink}details/education/`,
     certifications: `${permalink}details/certifications/`,
   };
+  const LOADER = {
+    SCRAPING: {
+      ID: "scraping",
+      TEXT: {
+        ADD: "Scraping",
+        SUCCEED: "Scraped successfully",
+      },
+    },
+    PERSONAL: {
+      ID: "scraping-personal",
+      TEXT: {
+        ADD: "Personal data",
+        SUCCEED: "Personal data",
+      },
+    },
+    EXPERIENCE: {
+      ID: "scraping-experience",
+      TEXT: {
+        ADD: "Experiences data",
+        SUCCEED: "Experiences data",
+      },
+    },
+    EDUCATION: {
+      ID: "scraping-education",
+      TEXT: {
+        ADD: "Education data",
+        SUCCEED: "Education data",
+      },
+    },
+    CERTIFICATION: {
+      ID: "scraping-certification",
+      TEXT: {
+        ADD: "Certification data",
+        SUCCEED: "Certification data",
+      },
+    },
+  };
 
-  spinnies.add("scraping-personal", { text: "Personal data" });
+  spinnies.add(LOADER.SCRAPING.ID, { text: LOADER.SCRAPING.TEXT.ADD });
+
+  spinnies.add(LOADER.PERSONAL.ID, { text: LOADER.PERSONAL.TEXT.ADD });
   let { id, personal } = await personalData(page, url);
-  spinnies.succeed("scraping-personal", { text: "Personal data" });
+  spinnies.succeed(LOADER.PERSONAL.ID, { text: LOADER.PERSONAL.TEXT.SUCCEED });
 
-  spinnies.add("scraping-experiences", { text: "Experiences data" });
+  spinnies.add(LOADER.EXPERIENCE.ID, { text: LOADER.EXPERIENCE.TEXT.ADD });
   let experiences = await experiencesData(id, page, url);
-  spinnies.succeed("scraping-experiences", { text: "Experiences data" });
+  spinnies.succeed(LOADER.EXPERIENCE.ID, {
+    text: LOADER.EXPERIENCE.TEXT.SUCCEED,
+  });
 
-  spinnies.add("scraping-education", { text: "Education data" });
+  spinnies.add(LOADER.EDUCATION.ID, { text: LOADER.EXPERIENCE.TEXT.ADD });
   let education = await educationData(id, page, url);
-  spinnies.succeed("scraping-education", { text: "Education data" });
+  spinnies.succeed(LOADER.EDUCATION.ID, {
+    text: LOADER.EDUCATION.TEXT.SUCCEED,
+  });
 
-  spinnies.add("scraping-certifications", { text: "Certifications data" });
+  spinnies.add(LOADER.CERTIFICATION.ID, {
+    text: LOADER.CERTIFICATION.TEXT.ADD,
+  });
   let certifications = await certificationData(id, page, url);
-  spinnies.succeed("scraping-certifications", { text: "Certifications data" });
+  spinnies.succeed(LOADER.CERTIFICATION.ID, {
+    text: LOADER.CERTIFICATION.TEXT.SUCCEED,
+  });
 
-  spinnies.succeed("scraping", { text: "Scraped successfully" });
+  spinnies.succeed(LOADER.SCRAPING.ID, { text: LOADER.SCRAPING.TEXT.SUCCEED });
 
   return { id, personal, experiences, education, certifications };
 }

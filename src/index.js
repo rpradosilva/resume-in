@@ -6,11 +6,19 @@ const output = require("./modules/output");
 const spinnies = require("./modules/utils/loader");
 
 (async () => {
-  spinnies.add("browser", { text: "Starting browser" });
+  const LOADER = {
+    ID: "browser",
+    TEXT: {
+      ADD: "Starting browser",
+      SUCCEED: "Browser Loaded",
+    },
+  };
+
+  spinnies.add(LOADER.ID, { text: LOADER.TEXT.ADD });
   const browser = await puppeteer.launch();
   const context = await browser.createIncognitoBrowserContext();
   const page = await context.newPage();
-  spinnies.succeed("browser", { text: "Browser Loaded" });
+  spinnies.succeed(LOADER.ID, { text: LOADER.TEXT.SUCCEED });
 
   let credentials = await config();
   await access.login(page, credentials);
