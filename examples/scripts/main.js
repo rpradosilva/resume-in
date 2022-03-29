@@ -45,10 +45,12 @@
     jobId.setAttribute("class", "jobId");
     jobId.innerHTML = experience.jobId;
 
-    let logo = await createElement("img", ".container");
-    logo.setAttribute("src", experience.logo);
-    logo.setAttribute("class", "experience-logo");
-    logo.querySelectorAll(".experience-logo");
+    if (experience.logo != "") {
+      let logo = await createElement("img", ".container");
+      logo.setAttribute("src", experience.logo);
+      logo.setAttribute("class", "experience-logo");
+      logo.querySelectorAll(".experience-logo");
+    }
 
     let company = await createElement("p", ".container");
     company.setAttribute("class", "experience-company");
@@ -83,11 +85,9 @@
       duration.setAttribute("class", "duration");
       duration.innerHTML = `${experience.duration.startMonth}/${experience.duration.startYear} - ${experience.duration.endMonth}/${experience.duration.endYear}`;
     }
-  }
 
-  //   let loadedElements = [];
-  //   loadedElements = document.querySelectorAll(".container img");
-  //   console.log(loadedElements);
+    await createElement("hr", ".container");
+  }
 })();
 
 async function createElement(tag, parent) {
