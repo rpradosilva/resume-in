@@ -11,7 +11,8 @@
 
 [![About](https://img.shields.io/badge/-About-212121)](#about)
 [![License](https://img.shields.io/badge/-License-212121)](/LICENSE)
-[![Install](https://img.shields.io/badge/-Getting%20Started-006699)](#getting-started)
+[![Examples](https://img.shields.io/badge/-Examples-212121)](/examples)
+[![Install](https://img.shields.io/badge/-Getting%20Started-0A66C2)](#getting-started)
 
 </div>
 
