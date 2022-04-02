@@ -1,6 +1,6 @@
 <br>
 <div align="center">
-    <img src=".github/logo.png" alt="Logo Repo" width="150">
+    <img src=".github/default.svg" alt="Logo Repo" width="150">
     <h2>
         ResumeIn
     </h2>
@@ -11,7 +11,6 @@
 
 [![About](https://img.shields.io/badge/-About-212121)](#about)
 [![License](https://img.shields.io/badge/-License-212121)](/LICENSE)
-[![Examples](https://img.shields.io/badge/-Examples-212121)](/examples)
 [![Install](https://img.shields.io/badge/-Getting%20Started-0A66C2)](#getting-started)
 
 </div>
@@ -34,7 +33,7 @@ It is a web application that scrapes your linkedin data to create a local databa
 - The [NodeJS](https://nodejs.org/) is **required** to be able to run this project.
 - LinkedIn Account
 
-### Installation
+### Usage
 
 1. Clone repository
 
@@ -46,92 +45,20 @@ It is a web application that scrapes your linkedin data to create a local databa
 
 > **Important:** Massive usage may lock your LinkedIn account or block your login with captcha.
 
-### Usage
+### Visualize your data
 
-- The application generate a JSON file, you can use to:
-  - Customize your portfolio with dynamic data
-  - Generate resume
+After [extracting your data](#usage), a JSON file will be generated in the examples folder.
 
-### Output file
+1. Go to the `examples` folder
+2. Open `index.html` and run [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+3. You will be able to view your data
 
-To save your scrapped data, a JSON file is generated
+The application generate a JSON file, you can use to:
 
-JSON file structure:
+- Customize your portfolio with dynamic data
+- Generate resume
 
-> [See more about data structure](/.github/data-structure.md)
-
-```json
-{
-  "id": "string",
-  "personal": {
-    "photo": "string",
-    "name": "string",
-    "summary": "string",
-    "position": "string",
-    "location": {
-      "country": "string",
-      "state": "string"
-    },
-    "contact": {
-      "email": "string",
-      "tel": "string"
-    }
-  },
-  "experience": [
-    {
-      "jobId": "string",
-      "company": "string",
-      "logo": "string",
-      "title": "string",
-      "description": "string",
-      "contract": "string",
-      "location": "string",
-      "duration": {
-        "startMonth": "string",
-        "startYear": "string",
-        "endMonth": "string",
-        "endYear": "string"
-      },
-      "isTheCurrentJob": true
-    }
-  ],
-  "education": [
-    {
-      "schoolId": "string",
-      "school": "string",
-      "logo": "string",
-      "degree": "string",
-      "fieldsOfStudy": "string",
-      "grade": "string",
-      "activities": "string",
-      "notes": "string",
-      "duration": {
-        "startMonth": "string",
-        "startYear": "string",
-        "endMonth": "string",
-        "endYear": "string"
-      }
-    }
-  ],
-  "certifications": [
-    {
-      "certifiedId": "string",
-      "name": "string",
-      "company": "string",
-      "logo": "string",
-      "license": "string",
-      "certifiedUrl": "string",
-      "duration": {
-        "startMonth": "string",
-        "startYear": "string",
-        "endMonth": "string",
-        "endYear": "string"
-      },
-      "notExpire": true
-    }
-  ]
-}
-```
+> View data structure [here](./.github/data-structure.md)
 
 ### Dependencies
 
