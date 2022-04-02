@@ -1,0 +1,100 @@
+{
+  "id": "ACoAADocrQwBiBD6F-4h3HTupKJj93kJMHxcy9k",
+  "personal": {
+    "photo": "https://media-exp1.licdn.com/dms/image/C4E03AQFVl9cKIaGK8w/profile-displayphoto-shrink_200_200/0/1647658065656?e=2147483647&v=beta&t=zIP6i2Qe2olu3SJ712nIAYAizyOXsdo5WlQkduD4oUs",
+    "name": "teste2 teste",
+    "summary": "my test bio",
+    "position": "Aluno na teste",
+    "location": {
+      "country": "Brasil",
+      "state": "Rio de Janeiro"
+    },
+    "contact": {
+      "email": "gabinkdz@outlook.com",
+      "tel": ""
+    }
+  },
+  "experiences": [
+    {
+      "jobId": "1935705082",
+      "company": "Facebook",
+      "logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHi-wrXiQcbxw/company-logo_100_100/0/1635988509026?e=1657152000&v=beta&t=1pGopgITydwNMHFjwiGD92vs6LfjMgd75B0WKSlL-DI",
+      "title": "Gerente",
+      "description": "",
+      "contract": "Tempo integral",
+      "location": "São Paulo, Brasil",
+      "duration": {
+        "startMonth": "3",
+        "startYear": "2022",
+        "endMonth": "",
+        "endYear": ""
+      },
+      "isTheCurrentJob": true
+    },
+    {
+      "jobId": "1926105655",
+      "company": "Facebook",
+      "logo": "https://media-exp1.licdn.com/dms/image/C4E0BAQHi-wrXiQcbxw/company-logo_100_100/0/1635988509026?e=1657152000&v=beta&t=1pGopgITydwNMHFjwiGD92vs6LfjMgd75B0WKSlL-DI",
+      "title": "Engenheiro de software",
+      "description": "teste",
+      "contract": "Freelance",
+      "location": "Rio de Janeiro, Brasil",
+      "duration": {
+        "startMonth": "2",
+        "startYear": "2009",
+        "endMonth": "3",
+        "endYear": "2022"
+      },
+      "isTheCurrentJob": false
+    },
+    {
+      "jobId": "1926103840",
+      "company": "LinkedIn",
+      "logo": "https://media-exp1.licdn.com/dms/image/C560BAQHaVYd13rRz3A/company-logo_100_100/0/1638831589865?e=2147483647&v=beta&t=fi3iyTgSAogCMgSmAy_DeyogJxzo38RVBK0mcEuSpc8",
+      "title": "Analista de sistema",
+      "description": "teste",
+      "contract": "Tempo integral",
+      "location": "São Paulo, Brasil",
+      "duration": {
+        "startMonth": "1",
+        "startYear": "2007",
+        "endMonth": "2",
+        "endYear": "2009"
+      },
+      "isTheCurrentJob": false
+    },
+    {
+      "jobId": "1936233257",
+      "company": "teste",
+      "logo": "",
+      "title": "Testador",
+      "description": "teste",
+      "contract": "Tempo integral",
+      "location": "Rio de Janeiro, Brasil",
+      "duration": {
+        "startMonth": "1",
+        "startYear": "2007",
+        "endMonth": "4",
+        "endYear": "2008"
+      },
+      "isTheCurrentJob": false
+    }
+  ],
+  "education": [],
+  "certifications": [
+    {
+      "certifiedId": "532798671",
+      "name": "certified",
+      "company": "test",
+      "logo": "",
+      "license": "",
+      "duration": {
+        "startMonth": "",
+        "startYear": "",
+        "endMonth": "",
+        "endYear": ""
+      },
+      "notExpire": true
+    }
+  ]
+}
