@@ -1,0 +1,60 @@
+.personal {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-rg);
+  justify-content: center;
+}
+
+.personal > hr {
+  border-top: var(--space-xs) solid var(--neutral-300);
+  margin: var(--space-lg) 0 0 0;
+  width: 100%;
+}
+
+.personal > img {
+  border: calc(var(--space-xs) / 2) solid var(--neutral-300);
+  border-radius: var(--border-rounded);
+}
+
+.personal > h1 {
+  background: var(--primary-default);
+  border-radius: var(--space-xs);
+  color: var(--neutral-100);
+  font: var(--h1);
+  margin: var(--space-rg) 0;
+  padding: var(--space-sm) var(--space-rg);
+}
+
+.personal > h2 {
+  color: var(--neutral-700);
+  font: var(--h2);
+}
+
+.personal > h3 {
+  color: var(--primary-dark);
+  font: var(--h3);
+}
+
+.personal > p {
+  color: var(--neutral-700);
+  font: var(--p-text);
+  max-width: calc(var(--space-lg) * 16);
+  text-align: center;
+}
+
+.personal > .contact,
+.personal > .location {
+  display: flex;
+  gap: var(--space-rg);
+}
+
+.contact > p {
+  color: var(--primary-dark);
+  font: var(--p-title);
+}
+
+.location > p {
+  color: var(--neutral-500);
+  font: var(--p-note);
+}

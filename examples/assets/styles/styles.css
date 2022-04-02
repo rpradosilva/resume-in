@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600&family=Oxygen&display=swap");
+@import url("content/reset.css");
+@import url("content/personal.css");
+@import url("content/experience.css");
+@import url("content/education.css");
+@import url("content/certifications.css");
+
+:root {
+  --primary-dark: #004d99;
+  --primary-default: #0a66c2;
+  --primary-light: #4da6ff;
+  --neutral-700: #111111;
+  --neutral-500: #5d5c66;
+  --neutral-300: #f3f2ef;
+  --neutral-100: #ffffff;
+  --feedback-error: #e55c5c;
+  --feedback-info: #5cb4e5;
+  --feedback-warning: #f2b949;
+  --feedback-success: #5ce56a;
+  --h1: 40px/1.15 "Fira Sans", sans-serif;
+  --h2: 32px/1.15 "Fira Sans", sans-serif;
+  --h3: 24px/1.35 "Fira Sans", sans-serif;
+  --h4: 18px/1.5 "Fira Sans", sans-serif;
+  --p-title: 21px/1.75 "Oxygen", sans-serif;
+  --p-text: 18px/1.5 "Oxygen", sans-serif;
+  --p-note: 14px/1.5 "Oxygen", sans-serif;
+  --border-rounded: 100%;
+  --space-xl: 40px;
+  --space-lg: 32px;
+  --space-md: 24px;
+  --space-rg: 16px;
+  --space-sm: 8px;
+  --space-xs: 4px;
+  --elevate: 0px 24px 48px 0px hsba(249, 11%, 68%, 0.2);
+}
+
+body {
+  background: var(--neutral-300);
+  font: var(--p-text);
+  padding: var(--space-lg);
+}
+
+header,
+main,
+footer {
+  align-items: center;
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  margin: 0 0 var(--space-md) 0;
+}
+
+header > a {
+  align-items: center;
+  display: flex;
+  gap: var(--space-sm);
+  text-decoration: none;
+}
+
+header > a:hover,
+footer > a:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+header > a h2 {
+  color: var(--neutral-700);
+  font: var(--h2);
+}
+
+.container {
+  background: var(--neutral-100);
+  border-radius: var(--space-sm);
+  box-shadow: var(--elevate);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+}
+
+footer > a {
+  align-items: center;
+  color: var(--neutral-500);
+  display: flex;
+  font: var(--p-text);
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+  text-decoration: none;
+}

@@ -1,0 +1,58 @@
+.container > .education {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.container > .education > h1 {
+  color: var(--primary-default);
+  font: var(--h1);
+  margin-top: var(--space-rg);
+}
+
+.container > .education > div {
+  align-items: flex-start;
+  background: var(--neutral-300);
+  border-radius: var(--space-sm);
+  display: flex;
+  gap: var(--space-lg);
+  justify-content: space-between;
+  padding: var(--space-lg);
+  max-width: calc(var(--space-xl) * 16);
+}
+
+.container > .education > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
+.container > .education > div > img {
+  border-radius: var(--space-sm);
+}
+
+.container > .education > div > div > h2 {
+  border-radius: var(--space-xs);
+  color: var(--primary-default);
+  font: var(--h2);
+}
+
+.container > .education > div > div > h3 {
+  color: var(--primary-dark);
+  font: var(--h3);
+}
+
+.container > .education > div > div > p {
+  color: var(--neutral-700);
+  font: var(--p-text);
+}
+
+.container > .education > div > div > span {
+  background: var(--neutral-100);
+  border-radius: var(--space-xs);
+  color: var(--neutral-700);
+  margin: var(--space-sm) 0 0 0;
+  padding: var(--space-sm) var(--space-rg);
+  font: var(--p-text);
+}

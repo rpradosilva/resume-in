@@ -25,7 +25,7 @@ async function config() {
   } else {
     email = readlineSync.questionEMail("E-mail: ");
     pass = readlineSync.question("Password: ", { hideEchoBack: true });
-    save = readlineSync.question("Save credentials? (y/n)", {
+    save = readlineSync.question("Save credentials? (Y/n)", {
       defaultInput: "y",
       limit: ["y", "n"],
       trueValue: "y",

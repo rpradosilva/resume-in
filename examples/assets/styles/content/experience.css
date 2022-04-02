@@ -1,0 +1,67 @@
+.container > .experiences {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.container > .experiences > h1 {
+  color: var(--primary-default);
+  font: var(--h1);
+  margin-top: var(--space-rg);
+}
+
+.container > .experiences > div {
+  align-items: flex-start;
+  border: var(--space-xs) solid var(--neutral-300);
+  border-radius: var(--space-sm);
+  display: flex;
+  gap: var(--space-md);
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  max-width: calc(var(--space-xl) * 16);
+}
+
+.container > .experiences > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
+.container > .experiences > div > img {
+  border: calc(var(--space-xs) / 2) solid var(--neutral-300);
+  border-radius: var(--space-sm);
+}
+
+.container > .experiences > div > div > h2 {
+  background: var(--primary-default);
+  border-radius: var(--space-xs);
+  color: var(--neutral-100);
+  font: var(--h2);
+  margin: 0 0 var(--space-sm) 0;
+  padding: var(--space-sm) var(--space-rg);
+}
+
+.container > .experiences > div > div > h3 {
+  color: var(--primary-dark);
+  font: var(--h3);
+}
+
+.container > .experiences > div > div > p {
+  color: var(--neutral-700);
+  font: var(--p-text);
+}
+
+.container > .experiences > div > div > span {
+  background: var(--neutral-300);
+  border-radius: var(--space-xs);
+  color: var(--neutral-700);
+  margin: var(--space-sm) 0 0 0;
+  padding: var(--space-sm) var(--space-rg);
+  font: var(--p-text);
+}
+
+.container > .experiences > div > div > .current {
+  background: var(--feedback-info);
+  color: var(--neutral-100);
+}

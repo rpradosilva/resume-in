@@ -11,7 +11,7 @@ async function json(scraped) {
   };
 
   spinnies.add(LOADER.ID, { text: LOADER.TEXT.ADD });
-  let dataPath = "./data.json";
+  let dataPath = "./examples/data.json";
   let data = JSON.stringify(scraped, null, 2);
   fs.writeFileSync(dataPath, data, "utf-8");
   spinnies.succeed(LOADER.ID, { text: LOADER.TEXT.SUCCEED });
