@@ -4,7 +4,7 @@
     <h2>
         ResumeIn
     </h2>
-    A scraping your LinkedIn to JSON
+    A scraping your LinkedIn data to JSON
 </div>
 <br>
 <div align="center">
@@ -23,8 +23,7 @@ It is a web application that scrapes your linkedin data to create a local databa
 
 - Scraping LinkedIn data
 - Save data to JSON
-
-> Follow our work [here](https://github.com/rpradosilva/resume-in/projects/1).
+- Preview data
 
 ## Getting Started
 
