@@ -59,16 +59,16 @@ async function personal(page, url) {
 
   await page.goto(url.contact);
   await page.waitForSelector(
-    ".pe-contact-info-form__phone-field.ember-view input"
+    "#single-line-text-form-component-urn-li-fsu-profileContactInfoEditFormElement-PHONE-NUMBER-1"
   );
   let tel = await capture(
     page,
-    ".pe-contact-info-form__phone-field.ember-view input",
+    "#single-line-text-form-component-urn-li-fsu-profileContactInfoEditFormElement-PHONE-NUMBER-1",
     "value"
   );
   let sanitizeEmail = await capture(
     page,
-    "[href='/psettings/email']",
+    "[href='https://www.linkedin.com/psettings/email']",
     "textContent"
   );
   let email = sanitizeEmail.match(/[a-zA-Z]+@\w+\W\w+/g).toString();
